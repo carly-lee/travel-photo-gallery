@@ -1,0 +1,8 @@
+{
+  "cities": [
+    {"name": "London", "date": "Dec, 2014 ~ Aug, 2016"},
+    {"name": "New York", "date": "May, 2016"},
+    {"name": "Rome", "date": "April, 2016"},
+    {"name": "Paris", "date": "May, 2015"}
+  ]
+}
