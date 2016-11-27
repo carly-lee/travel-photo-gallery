@@ -4,7 +4,7 @@ var HOST = 'localhost';
 var path = require('path');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
-var webpackConfig = require('./webpack.config.js');
+var webpackConfig = require('./webpack.config.dev.js');
 
 var config = Object.create(webpackConfig);
 config.devtool = 'cheap-module-eval-source-map';
@@ -12,7 +12,6 @@ config.debug = true;
 
 var server = new WebpackDevServer(webpack(config), {
   contentBase: './src',
-  publicPath: '/',
   hot: true,
   inline: true,
   historyApiFallback: true,

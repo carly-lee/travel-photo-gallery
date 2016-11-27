@@ -1,9 +1,8 @@
-'use strict';
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { requestConfig } from 'actions/ConfigActions';
 
+import { HorizontalList } from 'components/horizontallist';
 import styles from './App.css';
 
 export class App extends Component {
@@ -13,7 +12,7 @@ export class App extends Component {
 
   _getHorizontalScroll(cities){
     return cities.map((city, idx, array)=>{
-      return <div key={idx}>{city.name}</div>;
+      return <HorizontalList key={idx} title={city.name}/>;
     });
   }
 
@@ -21,8 +20,9 @@ export class App extends Component {
     const { config } = this.props;
     return (
       <div className={styles.App}>
-        <h2>My travel photos</h2>
-        { config ? this._getHorizontalScroll(config.cities) : <div>Loading...</div>}
+        <h1 className={styles.title}>My travel photos</h1>
+        <p className={styles.description}>These are photos I have taken while travel several cities.</p>
+        { config ? this._getHorizontalScroll(config.cities) : <div>Loading...</div> }
       </div>
     );
   }
