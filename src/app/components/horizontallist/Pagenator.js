@@ -9,7 +9,7 @@ export default class Pagenator extends Component {
   _getListItems(){
     let data = [1,2,3,4,5,6,7,8,9,10];
     return data.map((val, idx, arr)=>{
-      return <ListItem key={idx} index={idx} type={'page'}/>;
+      return <ListItem key={idx} index={idx} type="page" />;
     });
   }
 

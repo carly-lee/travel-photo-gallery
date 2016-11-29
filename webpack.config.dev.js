@@ -43,7 +43,7 @@ module.exports = {
     ],
     loaders:[
       {test: /\.js$/, loader: 'babel', include: path.resolve(__dirname, 'src')},
-      {test: /\.css$/, loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss'},
+      {test: /\.css$/, loader: 'style!css?modules&importLoaders=1&localIdentName=[name]_[local]_[hash:base64:5]!postcss'},
       {test: /\.json$/,loader: 'json'},
       {test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,loader: 'file'}
     ]

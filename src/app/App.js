@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { requestConfig } from 'actions/ConfigActions';
 
 import { HorizontalList } from 'components/horizontallist';
-import styles from './App.css';
+import styles from './app.css';
 
 export class App extends Component {
   componentWillMount(){
@@ -12,14 +12,14 @@ export class App extends Component {
 
   _getHorizontalScroll(cities){
     return cities.map((city, idx, array)=>{
-      return <HorizontalList key={idx} type={'page'} title={city.name}/>;
+      return <HorizontalList key={idx} type="page" title={city.name}/>;
     });
   }
 
   render() {
     const { config } = this.props;
     return (
-      <div className={styles.App}>
+      <div>
         <h1 className={styles.title}>My travel photos</h1>
         <p className={styles.description}>These are photos I have taken while travel several cities.</p>
         { config ? this._getHorizontalScroll(config.cities) : <div>Loading...</div> }

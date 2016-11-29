@@ -9,7 +9,6 @@ describe('<HorizontalList />', ()=>{
 
   const setup = ()=>{
     wrapper = mount( <HorizontalList {...props} />);
-    console.log( wrapper.debug() );
   };
 
   it('shows the title which passed by a prop', ()=>{

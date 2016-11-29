@@ -1,7 +1,7 @@
 {
   "name": "vertical-horizontal-mix-scroll",
   "version": "1.0.0",
-  "description": "Vertical horizontal mix scroll",
+  "description": "Photo gallery",
   "main": "index.js",
   "scripts": {
     "start": "node ./server.js",
@@ -71,8 +71,7 @@
   },
   "babel": {
     "presets": [
-      "react-app",
-      "es2015"
+      "react-app"
     ],
     "env": {
       "test": {

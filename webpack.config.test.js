@@ -11,7 +11,7 @@ module.exports = {
     libraryTarget: 'commonjs2',
   },
   resolve: {
-    extensions: [ '', '.js', '.json' ],
+    extensions: [ '', '.js', '.json', '.css' ],
     root: path.resolve(__dirname),
     alias: {
       app: path.join(__dirname,'src/app'),
@@ -24,7 +24,7 @@ module.exports = {
   module:{
     loaders:[
       {test: /\.js$/, loader: 'babel', include: path.resolve(__dirname, 'src')},
-      {test: /\.css$/, loader: 'style!css?localIdentName=[name]_[local]'},
+      {test: /\.css$/, loader: 'style!css?localIdentName=[local]'},
       {test: /\.json$/,loader: 'json'},
       { test: /\\.(ttf|eot|svg)$/, loader: "file-loader" }
     ]

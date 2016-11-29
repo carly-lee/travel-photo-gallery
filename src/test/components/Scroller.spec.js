@@ -11,7 +11,7 @@ describe('<Scroller />', ()=>{
   });
 
   it('has .listContainerScroll', ()=>{
-    expect(wrapper.is('.listContainerScroll')).toBe(true);
+    expect(wrapper.find('.listContainerScroll').length).toBe(1);
   });
 
   it('shows <ListItem />', ()=>{

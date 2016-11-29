@@ -7,7 +7,7 @@ export default class ListItem extends Component {
   render(){
     const { type, posX, index } = this.props;
 
-    if( type === 'page '){
+    if( type === 'page'){
       return (
         <div className={styles.pageListItem} style={{left:posX}}>
           {'page ' + posX}
