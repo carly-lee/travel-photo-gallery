@@ -1,5 +1,5 @@
 {
-  "name": "vertical-horizontal-mix-scroll",
+  "name": "travel-photo-gallery",
   "version": "1.0.0",
   "description": "Photo gallery",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/carly-lee/vh-mix-scroll.git"
+    "url": "git+https://github.com/carly-lee/travel-photo-gallery.git"
   },
   "keywords": [
     "react",
@@ -20,9 +20,9 @@
   "author": "Carly Lee",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/carly-lee/vh-mix-scroll/issues"
+    "url": "https://github.com/carly-lee/travel-photo-gallery/issues"
   },
-  "homepage": "https://github.com/carly-lee/vh-mix-scroll#readme",
+  "homepage": "https://github.com/carly-lee/travel-photo-gallery#readme",
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
     "react": "^15.4.1",
