@@ -1,3 +1,7 @@
+@value mobileWidth: 320px;
+@value tabletWidth: 768px;
+@value desktopWidth: 1224px;
+
 @font-face {
 	font-family: 'OpenSans';
 	src: url('./fonts/OpenSans-Light.woff2') format('woff2'),

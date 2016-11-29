@@ -5,12 +5,12 @@ import styles from './horizontallist.css';
 
 export default class HorizontalList extends Component {
 
-  _getScrollList(){
-    return <Scroller />;
-  }
-
-  _getPageList(){
-    return <Pagenator />;
+  _getList(type){
+    if(type==='page'){
+      return <Pagenator />;
+    }else{
+      return <Scroller />;
+    }
   }
 
   render(){
@@ -19,7 +19,7 @@ export default class HorizontalList extends Component {
     return(
       <div>
         <div className={styles.title}>{title}</div>
-        {type==='page' ? this._getPageList() : this._getScrollList()}
+        { this._getList(type) }
       </div>
     )
   }

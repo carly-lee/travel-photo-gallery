@@ -16,26 +16,26 @@ module.exports = {
   ],
   output:{
     path: path.join(__dirname, '/build/'),
-    pathinfo: true,
     publicPath: publicPath,
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['','.js', '.json', '.css'],
+    extensions: [ '', '.js', '.json', '.css' ],
     root: path.resolve(__dirname),
     alias: {
       'react/lib/ReactMount': 'react-dom/lib/ReactMount', //for react-hot-loader
-      app: 'src/app',
-      actions: 'src/app/actions',
-      components: 'src/app/components',
-      reducers: 'src/app/reducers',
-      utils: 'src/app/utils'
+      app: path.join(__dirname,'src/app'),
+      actions: path.join(__dirname,'src/app/actions'),
+      components: path.join(__dirname,'src/app/components'),
+      reducers: path.join(__dirname,'src/app/reducers'),
+      utils: path.join(__dirname,'src/app/utils')
     }
   },
   plugins:[
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin('main.css', {allChunks: true})
   ],
   module:{
     preLoaders: [

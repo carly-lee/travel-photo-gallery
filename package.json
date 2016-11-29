@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./server.js",
     "build": "webpack --config ./webpack.config.prod.js",
-    "test": "NODE_ENV=test jest --coverage"
+    "test": "NODE_ENV=test jest --watch"
   },
   "repository": {
     "type": "git",
@@ -70,27 +70,17 @@
   "babel": {
     "presets": [
       "react-app"
-    ],
-    "env": {
-      "test": {
-        "plugins": [
-          [
-            "babel-plugin-webpack-alias",
-            {
-              "config": "webpack.config.dev.js"
-            }
-          ]
-        ]
-      }
-    }
+    ]
   },
   "jest": {
-    "globals": {
-      "__DEV__": true
-    },
+    "verbose": true,
     "modulePaths": [
-      "<rootDir>/src",
-      "<rootDir>/src/app"
+      "<rootDir>/src/",
+      "<rootDir>/src/app/",
+      "<rootDir>/src/app/actions/",
+      "<rootDir>/src/app/components/",
+      "<rootDir>/src/app/reducers/",
+      "<rootDir>/src/app/utils/"
     ],
     "moduleFileExtensions": [
       "js",
