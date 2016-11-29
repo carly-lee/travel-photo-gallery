@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import { HorizontalList, Pagenator, Scroller } from 'components/horizontallist';
 
@@ -9,6 +9,7 @@ describe('<HorizontalList />', ()=>{
 
   const setup = ()=>{
     wrapper = mount( <HorizontalList {...props} />);
+    console.log( wrapper.debug() );
   };
 
   it('shows the title which passed by a prop', ()=>{

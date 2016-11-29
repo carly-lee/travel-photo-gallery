@@ -12,7 +12,7 @@ export class App extends Component {
 
   _getHorizontalScroll(cities){
     return cities.map((city, idx, array)=>{
-      return <HorizontalList key={idx} title={city.name}/>;
+      return <HorizontalList key={idx} type={'page'} title={city.name}/>;
     });
   }
 

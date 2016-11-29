@@ -18,7 +18,7 @@ export default class Pagenator extends Component {
       <div className={styles.listContainer}>
         { this._getListItems() }
       </div>
-    )
+    );
   }
 }
 

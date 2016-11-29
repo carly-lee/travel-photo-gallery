@@ -81,6 +81,7 @@ module.exports = {
     ];
   },
   node: {
+    __dirname: true,
     fs: 'empty',
     net: 'empty',
     tls: 'empty'

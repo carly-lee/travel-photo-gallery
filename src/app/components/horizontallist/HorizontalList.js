@@ -21,7 +21,7 @@ export default class HorizontalList extends Component {
         <div className={styles.title}>{title}</div>
         { this._getList(type) }
       </div>
-    )
+    );
   }
 }
 

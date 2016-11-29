@@ -18,7 +18,7 @@ export default class Scroller extends Component {
       <div className={styles.listContainerScroll}>
         { this._getListItems() }
       </div>
-    )
+    );
   }
 }
 
