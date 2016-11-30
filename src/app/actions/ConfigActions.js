@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-fetch';
 import { getResponse } from 'utils/Fetch';
+import { SERVER, DATA_URL } from 'app/Constants';
 
 export const CONFIG_REQUEST = 'CONFIG_REQUEST';
 export function configRequest() {
@@ -28,7 +29,7 @@ export function requestConfig() {
 
   return dispatch => {
     dispatch(configRequest());
-    const fetchPath = 'http://localhost:3000'+'/data/config.json';
+    const fetchPath = SERVER + DATA_URL.CONFIG;
 
     return fetch(fetchPath)
       .then(getResponse)

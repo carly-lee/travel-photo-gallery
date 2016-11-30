@@ -13,7 +13,6 @@ config.debug = true;
 var server = new WebpackDevServer(webpack(config), {
   contentBase: './src',
   publicPath: config.output.publicPath,
-  quiet: true,
   watchOptions: {
     ignored: /node_modules/
   },

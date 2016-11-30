@@ -12,7 +12,7 @@ var publicUrl = '';
 
 module.exports = {
   entry:[
-    './src/app/index.js'
+    './src/app/index.prod.js'
   ],
   output:{
     path: path.join(__dirname, '/build/'),
@@ -23,11 +23,12 @@ module.exports = {
     extensions: ['','.js', '.json', '.css'],
     root: path.resolve(__dirname),
     alias: {
-      app: 'src/app',
-      actions: 'src/app/actions',
-      components: 'src/app/components',
-      reducers: 'src/app/reducers',
-      utils: 'src/app/utils'
+      app: path.join(__dirname,'src/app'),
+      store: path.join(__dirname,'src/app/store/prod'),
+      actions: path.join(__dirname,'src/app/actions'),
+      reducers: path.join(__dirname,'src/app/reducers'),
+      components: path.join(__dirname,'src/app/components'),
+      utils: path.join(__dirname,'src/app/utils')
     }
   },
   plugins:[

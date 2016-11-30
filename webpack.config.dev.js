@@ -12,8 +12,7 @@ module.exports = {
   entry:[
     require.resolve('webpack-dev-server/client')+'?http://localhost:3000',
     require.resolve('webpack/hot/dev-server'),
-    // require.resolve('react-dev-utils/webpackHotDevClient'),
-    './src/app/index.js'
+    './src/app/index.dev.js'
   ],
   output:{
     path: path.join(__dirname, '/build/'),
@@ -27,9 +26,10 @@ module.exports = {
     alias: {
       'react/lib/ReactMount': 'react-dom/lib/ReactMount', //for react-hot-loader
       app: path.join(__dirname,'src/app'),
+      store: path.join(__dirname,'src/app/store/dev'),
       actions: path.join(__dirname,'src/app/actions'),
-      components: path.join(__dirname,'src/app/components'),
       reducers: path.join(__dirname,'src/app/reducers'),
+      components: path.join(__dirname,'src/app/components'),
       utils: path.join(__dirname,'src/app/utils')
     }
   },
