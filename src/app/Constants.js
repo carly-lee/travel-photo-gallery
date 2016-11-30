@@ -1,3 +1,11 @@
+export const LIST_LENGTH = {
+  MOBILE: 3,
+  TABLET: 5,
+  DESKTOP: 7
+}
+
 export const UIConstants = {
-  ITEM_AMOUT: 7 
+  MOBILE: 3,
+  TABLET: 5,
+  DESKTOP: 7
 }

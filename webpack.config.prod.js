@@ -63,7 +63,7 @@ module.exports = {
     ],
     loaders:[
       {test: /\.js$/, loader: 'babel', include:path.resolve(__dirname, 'src')},
-      {test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&-autoprefixer!postcss')},
+      {test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&-autoprefixer!postcss'), include: path.resolve(__dirname, 'src')},
       {test: /\.json$/,loader: 'json'},
       {test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,loader: 'file'}
     ]

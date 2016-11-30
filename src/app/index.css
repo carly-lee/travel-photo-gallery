@@ -1,20 +1,26 @@
-@value mobileWidth: 320px;
-@value tabletWidth: 768px;
-@value desktopWidth: 1224px;
+@import './styles/fonts';
+@import '../../node_modules/normalize.css/normalize.css';
+@import './styles/config';
 
-@font-face {
-	font-family: 'OpenSans';
-	src: url('./fonts/OpenSans-Light.woff2') format('woff2'),
-  url('./fonts/OpenSans-Light.woff') format('woff'),
-  url('./fonts/OpenSans-Light.ttf') format('truetype');
-	font-weight: lighter;
-	font-style: normal;
-}
-
-body {
+html, body {
   margin: 0;
   padding: 0;
   font-family: 'OpenSans', Fallback, sans-serif;
   color: #eeeeee;
   background-color: #333333;
+}
+
+a, a:hover, a:focus, a:visited {
+  text-decoration: none;
+	color: #ffffff;
+}
+
+a:focus, input:focus, button:focus {
+  outline: none;
+}
+
+div, h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, span, input, button, img, label {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }

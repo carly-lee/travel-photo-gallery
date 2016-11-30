@@ -7,11 +7,16 @@ var WebpackDevServer = require('webpack-dev-server');
 var webpackConfig = require('./webpack.config.dev.js');
 
 var config = Object.create(webpackConfig);
-config.devtool = 'cheap-module-eval-source-map';
+config.devtool = 'eval';
 config.debug = true;
 
 var server = new WebpackDevServer(webpack(config), {
   contentBase: './src',
+  publicPath: config.output.publicPath,
+  quiet: true,
+  watchOptions: {
+    ignored: /node_modules/
+  },
   hot: true,
   inline: true,
   historyApiFallback: true,
@@ -20,6 +25,5 @@ var server = new WebpackDevServer(webpack(config), {
   if (err) {
     return console.log(err);
   }
-
   console.log('Listening at http://' + HOST + ':' + PORT + '/');
 });

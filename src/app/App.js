@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { requestConfig } from 'actions/ConfigActions';
 
 import { HorizontalList } from 'components/horizontallist';
+import { LIST_LENGTH } from 'app/Constants';
 import styles from './app.css';
 
 export class App extends Component {
@@ -20,7 +21,7 @@ export class App extends Component {
     const { config } = this.props;
     return (
       <div>
-        <h1 className={styles.title}>My travel photos</h1>
+        <h1 className={styles.title}>My travel photo gallery</h1>
         <p className={styles.description}>These are photos I have taken while travel several cities.</p>
         { config ? this._getHorizontalScroll(config.cities) : <div>Loading...</div> }
       </div>

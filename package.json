@@ -24,7 +24,9 @@
   },
   "homepage": "https://github.com/carly-lee/travel-photo-gallery#readme",
   "dependencies": {
+    "i": "^0.3.5",
     "isomorphic-fetch": "^2.2.1",
+    "normalize.css": "^5.0.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-redux": "^4.4.6",

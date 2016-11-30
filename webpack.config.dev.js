@@ -10,12 +10,14 @@ var publicUrl = '';
 
 module.exports = {
   entry:[
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
+    require.resolve('webpack-dev-server/client')+'?http://localhost:3000',
+    require.resolve('webpack/hot/dev-server'),
+    // require.resolve('react-dev-utils/webpackHotDevClient'),
     './src/app/index.js'
   ],
   output:{
     path: path.join(__dirname, '/build/'),
+    pathinfo: true,
     publicPath: publicPath,
     filename: 'bundle.js'
   },
@@ -32,6 +34,9 @@ module.exports = {
     }
   },
   plugins:[
+    new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify('development')
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
@@ -42,8 +47,8 @@ module.exports = {
       {test: /\.js$/,loader: 'eslint',include: path.resolve(__dirname, 'src')}
     ],
     loaders:[
-      {test: /\.js$/, loader: 'babel', include: path.resolve(__dirname, 'src')},
-      {test: /\.css$/, loader: 'style!css?modules&importLoaders=1&localIdentName=[name]_[local]_[hash:base64:5]!postcss'},
+      {test: /\.js$/, loaders: ['react-hot','babel'], include: path.resolve(__dirname, 'src')},
+      {test: /\.css$/, loader: 'style!css?modules&importLoaders=1&localIdentName=[name]_[local]_[hash:base64:5]!postcss', include: path.resolve(__dirname, 'src')},
       {test: /\.json$/,loader: 'json'},
       {test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,loader: 'file'}
     ]
