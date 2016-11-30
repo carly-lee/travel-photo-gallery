@@ -1,11 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { HorizontalList, Pagenator, Scroller } from 'components/horizontallist';
+import { HorizontalList } from 'components/horizontallist';
 
 describe('<HorizontalList />', ()=>{
   let wrapper;
-  let props = { title:'London', type: 'scroll' };
+  let props = { title:'London' };
 
   const setup = ()=>{
     wrapper = mount( <HorizontalList {...props} />);
@@ -15,18 +15,5 @@ describe('<HorizontalList />', ()=>{
     setup();
     expect(wrapper.instance().props.title).toEqual('London');
     expect(wrapper.find('.title').length).toEqual(1);
-  });
-
-  it('shows default type as scroll with <Scroller />', ()=>{
-    setup();
-    expect(wrapper.props().type).toEqual('scroll');
-    expect(wrapper.find(Scroller).length).toEqual(1);
-  });
-
-  it('type can be set as page with <Pagenator />', ()=>{
-    props.type = 'page';
-    setup();
-    expect(wrapper.instance().props.type).toEqual('page');
-    expect(wrapper.find(Pagenator).length).toEqual(1);
   });
 });

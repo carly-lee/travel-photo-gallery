@@ -1,31 +1,31 @@
 import React, { Component } from 'react';
 
-import { Scroller, Pagenator } from 'components/horizontallist';
+import { ListItem } from 'components/horizontallist';
 import styles from './horizontallist.css';
 
 export default class HorizontalList extends Component {
 
-  _getList(type){
-    if(type==='page'){
-      return <Pagenator />;
-    }else{
-      return <Scroller />;
-    }
+  _getListItems(){
+    let data = [1,2,3,4,5,6,7,8,9,10];
+    return data.map((val, idx, arr)=>{
+      return <ListItem key={idx} index={idx} />;
+    });
   }
 
   render(){
-    const { title, type } = this.props;
+    const { title } = this.props;
 
     return(
       <div>
         <div className={styles.title}>{title}</div>
-        { this._getList(type) }
+        <div className={styles.listContainer}>
+          { this._getListItems() }
+        </div>
       </div>
     );
   }
 }
 
 HorizontalList.propTypes = {
-  title: React.PropTypes.string.isRequired,
-  type: React.PropTypes.string
+  title: React.PropTypes.string.isRequired
 }

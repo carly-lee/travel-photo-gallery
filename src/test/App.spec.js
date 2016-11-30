@@ -6,9 +6,10 @@ import config from '../data/config.json';
 
 describe('<App />', () => {
   let wrapper;
+  let props = { config:config, requestConfig:()=>{} };
 
   beforeEach(() => {
-    wrapper = mount( <App config={config} requestConfig={()=>{}} />);
+    wrapper = mount( <App {...props} />);
   });
 
   it('allows us to set props', () => {

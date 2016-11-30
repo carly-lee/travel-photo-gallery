@@ -9,12 +9,6 @@
   margin-bottom: 30px;
 }
 
-.listContainerScroll {
-  composes: listContainer;
-  overflow: auto;
-  white-space: nowrap;
-}
-
 .listitem {
   display: inline-block;
   box-sizing: border-box;
@@ -22,9 +16,4 @@
   height: 130px;
   background-color: #999999;
   border: 1px solid #ffffff;
-}
-
-.pageListItem {
-  composes: listitem;
-  /*position: absolute;*/
 }
