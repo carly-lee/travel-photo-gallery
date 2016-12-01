@@ -1,5 +1,5 @@
 import { CONFIG_REQUEST, CONFIG_SUCCESS, CONFIG_FAILURE } from 'app/actions/ConfigActions';
-import { config } from 'reducers/ConfigReducer';
+import { config } from 'reducers';
 
 import configJson from '../../data/config.json';
 

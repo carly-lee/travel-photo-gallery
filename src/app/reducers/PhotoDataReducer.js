@@ -1,33 +1,34 @@
-import { CONFIG_REQUEST, CONFIG_SUCCESS, CONFIG_FAILURE } from 'actions/ConfigActions';
+import { PHOTO_DATA_REQUEST, PHOTO_DATA_SUCCESS, PHOTO_DATA_FAILURE } from 'actions/PhotoDataActions';
 
 const initialState = {
     type: '',
     isFetching: false,
     success: false,
     payload: null,
-    data: null,
+    data: {},
     error: null
 };
 
-export function config( state = initialState, action ) {
+export function photoData( state = initialState, action ) {
   const { type, payload, error } = action;
 
     switch (type) {
-        case CONFIG_REQUEST:
+        case PHOTO_DATA_REQUEST:
             return Object.assign({}, state, {
                 type: type,
                 isFetching: true,
                 error: null
             });
-        case CONFIG_SUCCESS:
+        case PHOTO_DATA_SUCCESS:
+        const newData = { [action.city]:action.payload.photos };
             return Object.assign({}, state, {
                 type: type,
                 success: true,
                 isFetching: false,
                 payload: payload,
-                data: payload
+                data: Object.assign( {}, state.data, newData )
             });
-        case CONFIG_FAILURE:
+        case PHOTO_DATA_FAILURE:
             return Object.assign({}, state, {
                 type: type,
                 isFetching: false,

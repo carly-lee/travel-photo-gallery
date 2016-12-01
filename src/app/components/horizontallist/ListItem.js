@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import styles from './horizontallist.css';
+import styles from './listitem.css';
 
 export default class ListItem extends Component {
 

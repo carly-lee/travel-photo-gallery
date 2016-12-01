@@ -5,7 +5,7 @@ import { ListItem } from 'components/horizontallist';
 
 describe('<ListItem />', ()=>{
   let wrapper;
-  let props = { index:0, width: 200 };
+  let props = { index:0, width: 200, onClick: ()=>{} };
 
   beforeEach(()=>{
     wrapper = mount(<ListItem {...props} />);
