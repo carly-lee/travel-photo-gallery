@@ -7,13 +7,40 @@
 .listContainer {
   position: relative;
   margin-bottom: 30px;
+  height: 140px;
+  overflow: hidden;
 }
 
 .listitem {
+  position: absolute;
+  z-index: 0;
   display: inline-block;
-  box-sizing: border-box;
   width: 200px;
   height: 130px;
   background-color: #999999;
   border: 1px solid #ffffff;
+}
+
+.pageButton {
+  position: absolute;
+  z-index: 1;
+  width: 50px;
+  height: 130px;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.pageButton:hover {
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+.pageButtonLeft {
+  composes: pageButton;
+}
+
+.pageButtonRight {
+  composes: pageButton;
+  right: 0;
 }

@@ -3,17 +3,17 @@ import { connect } from 'react-redux';
 import { requestConfig } from 'actions/ConfigActions';
 
 import { HorizontalList } from 'components/horizontallist';
-import { LIST_LENGTH } from 'app/Constants';
 import styles from './app.css';
 
 export class App extends Component {
+
   componentWillMount(){
     this.props.requestConfig();
   }
 
   _getHorizontalScroll(cities){
     return cities.map((city, idx, array)=>{
-      return <HorizontalList key={idx} title={city.name}/>;
+      return <HorizontalList key={idx} title={city.name} />;
     });
   }
 

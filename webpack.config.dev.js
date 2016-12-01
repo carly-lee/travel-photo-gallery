@@ -25,6 +25,7 @@ module.exports = {
     root: path.resolve(__dirname),
     alias: {
       'react/lib/ReactMount': 'react-dom/lib/ReactMount', //for react-hot-loader
+      modernizr$: '.modernizrrc',
       app: path.join(__dirname,'src/app'),
       store: path.join(__dirname,'src/app/store/dev'),
       actions: path.join(__dirname,'src/app/actions'),
@@ -49,8 +50,10 @@ module.exports = {
     loaders:[
       {test: /\.js$/, loaders: ['react-hot','babel'], include: path.resolve(__dirname, 'src')},
       {test: /\.css$/, loader: 'style!css?modules&importLoaders=1&localIdentName=[name]_[local]_[hash:base64:5]!postcss', include: path.resolve(__dirname, 'src')},
+      {test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,loader: 'file'},
       {test: /\.json$/,loader: 'json'},
-      {test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,loader: 'file'}
+      {test: /\.svg$/,loaders: ['react-svgdom', 'svgo']},
+      {test: /\.modernizrrc$/, loader: 'modernizr'}
     ]
   },
   postcss: function() {

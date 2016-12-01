@@ -1,5 +1,6 @@
 @import './styles/fonts';
 @import '../../node_modules/normalize.css/normalize.css';
+@import '../../node_modules/octicons/build/octicons.css';
 @import './styles/config';
 
 html, body {
