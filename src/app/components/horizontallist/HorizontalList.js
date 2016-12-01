@@ -11,7 +11,8 @@ export default class HorizontalList extends Component {
 
       this.state = {
           currentIndex: 0,
-          width: 0
+          width: 0,
+          currentPage: 0
       }
   }
 
@@ -33,8 +34,8 @@ export default class HorizontalList extends Component {
   }
 
   _getPageSize(){
-    if( isDesktop() ) return PAGE_SIZE.DESKTOP;
-    if( isTablet() ) return PAGE_SIZE.TABLET;
+    if( isDesktop(window) ) return PAGE_SIZE.DESKTOP;
+    if( isTablet(window) ) return PAGE_SIZE.TABLET;
     return PAGE_SIZE.MOBILE;
   }
 
@@ -42,16 +43,25 @@ export default class HorizontalList extends Component {
     console.log( 'onItemClick', index );
   }
 
-  _onPageButtonClick( direction ){
-    console.log( '_onPageButtonClick', direction );
+  _onPageButtonClick = ( direction )=>{
+    const { currentPage } = this.state;
+    if( direction ){
+      this.setState({currentPage: currentPage-direction });
+    }else{
+      if( currentPage ){
+        this.setState({currentPage: currentPage-direction });
+      }
+    }
+    console.log( '_onPageButtonClick', direction, currentPage+direction );
   }
 
-  _getListItems(){
+  _getListItems = ()=>{
+    const { currentPage, width } = this.state;
     let data = [1,2,3,4,5,6,7,8,9,10];
     let posX;
     return data.map((val, idx, arr)=>{
-      posX = this.state.width * idx;
-      return <ListItem key={idx} index={idx} posX={posX} width={this.state.width} onClick={this._onItemClick} />;
+      posX = width * (idx + this._getPageSize()*currentPage);
+      return <ListItem key={idx} index={idx} posX={posX} width={width} onClick={this._onItemClick} />;
     });
   }
 

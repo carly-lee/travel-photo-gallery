@@ -11,7 +11,7 @@ describe('<ListItem />', ()=>{
     wrapper = mount(<ListItem {...props} />);
   });
 
-  it('has .listitem by default', ()=>{
-    expect(wrapper.find('.listitem').length).toBe(1);
+  it('has .listItem by default', ()=>{
+    expect(wrapper.find('.listItem').length).toBe(1);
   });
 });

@@ -1,6 +1,5 @@
 import React from 'react';
 import octicons from 'octicons';
-import ReactSVG from 'react-svg';
 
 import styles from './icon.css';
 
@@ -14,11 +13,9 @@ export class Icon extends React.Component {
   render(){
     const { iconType } = this.props;
 
-    if(document.env === 'test') {
+    if(process.env.NODE_ENV==='test' ) {
       return <div className={iconType}></div>
     }
-
-
 
     if( iconType ){
       const svg = octicons[iconType].toSVG({"class":styles.icon});

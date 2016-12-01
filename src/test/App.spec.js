@@ -10,6 +10,7 @@ describe('<App />', () => {
 
   beforeEach(() => {
     wrapper = mount( <App {...props} />);
+    // console.log( 'App', wrapper.debug() );
   });
 
   it('allows us to set props', () => {

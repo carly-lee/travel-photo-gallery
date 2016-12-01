@@ -13,8 +13,9 @@ export default class ListItem extends Component {
     const { posX, index } = this.props;
 
     return (
-      <div className={styles.listitem} style={{left:posX}} onClick={this._onClick}>
-        {index}
+      <div className={styles.listItem} style={{left:posX}} onClick={this._onClick}>
+        <div className={styles.temp}>{index}</div>
+        <div className={styles.listItemCover} />
       </div>
     );
   }
