@@ -5,7 +5,7 @@ const initialState = {
     isFetching: false,
     success: false,
     payload: null,
-    data: {},
+    data: null,
     error: null
 };
 
@@ -20,7 +20,7 @@ export function photoData( state = initialState, action ) {
                 error: null
             });
         case PHOTO_DATA_SUCCESS:
-        const newData = { [action.city]:action.payload.photos };
+        const newData = { [payload.id]:payload.photos };
             return Object.assign({}, state, {
                 type: type,
                 success: true,

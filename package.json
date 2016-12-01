@@ -1,7 +1,7 @@
 {
   "name": "travel-photo-gallery",
   "version": "1.0.0",
-  "description": "Photo gallery",
+  "description": "Photo gallery using react+redux+webpack",
   "main": "index.js",
   "scripts": {
     "start": "node ./server.js",
@@ -14,7 +14,8 @@
   },
   "keywords": [
     "react",
-    "scroll",
+    "redux",
+    "webpack",
     "gallery"
   ],
   "author": "Carly Lee",

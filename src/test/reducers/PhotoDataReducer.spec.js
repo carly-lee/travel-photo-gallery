@@ -11,7 +11,7 @@ describe('PhotoDataReducer', ()=>{
     isFetching: false,
     success: false,
     payload: null,
-    data: {},
+    data: null,
     error: null
   };
 
@@ -26,31 +26,31 @@ describe('PhotoDataReducer', ()=>{
         isFetching: true,
         success: false,
         payload: null,
-        data: {},
+        data: null,
         error: null
     };
     expect(photoData(initialState, action)).toEqual(expectedState);
   });
 
   it('should handle PHOTO_DATA_SUCCESS', ()=>{
-    const action = { type: PHOTO_DATA_SUCCESS, payload:londonJson, city:'london' };
+    const action = { type: PHOTO_DATA_SUCCESS, payload:londonJson };
     const expectedState = {
         type: PHOTO_DATA_SUCCESS,
         isFetching: false,
         success: true,
         payload: londonJson,
-        data: { "london":londonJson.photos },
+        data: { "ld":londonJson.photos },
         error: null
     };
     expect(photoData(initialState, action)).toEqual(expectedState);
 
-    const action2 = { type: PHOTO_DATA_SUCCESS, payload:nyJson, city:'ny' };
+    const action2 = { type: PHOTO_DATA_SUCCESS, payload:nyJson };
     const expectedState2 = {
         type: PHOTO_DATA_SUCCESS,
         isFetching: false,
         success: true,
         payload: nyJson,
-        data: { "london":londonJson.photos, "ny":nyJson.photos },
+        data: { "ld":londonJson.photos, "ny":nyJson.photos },
         error: null
     };
     expect(photoData(expectedState, action2)).toEqual(expectedState2);
@@ -63,7 +63,7 @@ describe('PhotoDataReducer', ()=>{
         isFetching: false,
         success: false,
         payload: null,
-        data: {},
+        data: null,
         error: 404
     };
     expect(photoData(initialState, action)).toEqual(expectedState);

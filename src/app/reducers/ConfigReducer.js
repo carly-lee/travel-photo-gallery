@@ -1,4 +1,4 @@
-import { CONFIG_REQUEST, CONFIG_SUCCESS, CONFIG_FAILURE } from 'actions/ConfigActions';
+import { CONFIG_REQUEST, CONFIG_SUCCESS, CONFIG_FAILURE, CONFIG_INITIALISED } from 'actions/ConfigActions';
 
 const initialState = {
     type: '',
@@ -35,6 +35,10 @@ export function config( state = initialState, action ) {
                 payload: null,
                 error: error
             });
+        case CONFIG_INITIALISED :
+          return Object.assign({}, state, {
+              type: type
+          });
         default:
             return state;
     }

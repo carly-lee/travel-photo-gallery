@@ -1,5 +1,7 @@
 {
   "length": 10,
+  "id":"ro",
+  "name":"Rome",
   "photos": [
     {"url":"/images/", "location":"Vatican City"},
     {"url":"/images/", "location":"Oxford Street"},

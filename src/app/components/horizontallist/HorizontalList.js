@@ -57,9 +57,8 @@ export default class HorizontalList extends Component {
 
   _getListItems = ()=>{
     const { currentPage, width } = this.state;
-    let data = [1,2,3,4,5,6,7,8,9,10];
     let posX;
-    return data.map((val, idx, arr)=>{
+    return this.props.photos.map((val, idx, arr)=>{
       posX = width * (idx + this._getPageSize()*currentPage);
       return <ListItem key={idx} index={idx} posX={posX} width={width} onClick={this._onItemClick} />;
     });
@@ -82,5 +81,6 @@ export default class HorizontalList extends Component {
 }
 
 HorizontalList.propTypes = {
-  title: React.PropTypes.string.isRequired
+  title: React.PropTypes.string.isRequired,
+  photos: React.PropTypes.array.isRequired
 }

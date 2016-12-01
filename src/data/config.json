@@ -1,8 +1,7 @@
 {
-  "cities": [
-    {"name": "London", "date": "Dec, 2014 ~ Aug, 2016", "url":"/data/london.json"},
-    {"name": "New York", "date": "May, 2016", "url":"/data/ny.json"},
-    {"name": "Rome", "date": "April, 2016", "url":"/data/paris.json"},
-    {"name": "Paris", "date": "May, 2015", "url":"/data/rome.json"}
-  ]
+    "ld":{"name": "London", "date": "Dec, 2014 ~ Aug, 2016", "url":"/data/london.json"},
+    "ny":{"name": "New York", "date": "May, 2016", "url":"/data/ny.json"},
+    "ro":{"name": "Rome", "date": "April, 2016", "url":"/data/paris.json"},
+    "pr":{"name": "Paris", "date": "May, 2015", "url":"/data/rome.json"}
+
 }

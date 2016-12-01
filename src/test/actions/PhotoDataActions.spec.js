@@ -21,12 +21,12 @@ describe('PhotoDataActions', () => {
 
     const expectedActions = [
       { type: PHOTO_DATA_REQUEST },
-      { type: PHOTO_DATA_SUCCESS, payload: london, city: 'london' }
+      { type: PHOTO_DATA_SUCCESS, payload: london }
     ];
 
     const store = mockStore({ photoData:[] });
 
-    return store.dispatch(requestPhotoData( DATA_URL.CONFIG, 'london' ))
+    return store.dispatch(requestPhotoData( DATA_URL.CONFIG ))
                 .then(() => { // return of async actions
                   expect(store.getActions()).toEqual(expectedActions)
                 })

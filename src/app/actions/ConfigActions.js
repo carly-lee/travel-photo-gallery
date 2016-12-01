@@ -41,3 +41,10 @@ export function requestConfig() {
       });
   }
 }
+
+export const CONFIG_INITIALISED = 'CONFIG_INITIALISED';
+export function configInitialised() {
+  return {
+    type: CONFIG_INITIALISED
+  }
+}

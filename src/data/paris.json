@@ -1,5 +1,7 @@
 {
   "length": 12,
+  "id":"pr",
+  "name":"Paris",
   "photos": [
     {"url":"/images/", "location":"Effel Tower"},
     {"url":"/images/", "location":"Oxford Street"},

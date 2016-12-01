@@ -1,5 +1,7 @@
 {
   "length": 15,
+  "id":"ny",
+  "name":"New York",
   "photos": [
     {"url":"/images/", "location":"Top of the Rock"},
     {"url":"/images/", "location":"Oxford Street"},

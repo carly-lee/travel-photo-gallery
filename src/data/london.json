@@ -1,5 +1,7 @@
 {
   "length": 17,
+  "id":"ld",
+  "name":"London",
   "photos": [
     {"url":"/images/", "location":"Oxford Street"},
     {"url":"/images/", "location":"Oxford Street"},

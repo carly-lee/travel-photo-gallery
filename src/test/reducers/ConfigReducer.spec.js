@@ -1,4 +1,4 @@
-import { CONFIG_REQUEST, CONFIG_SUCCESS, CONFIG_FAILURE } from 'app/actions/ConfigActions';
+import { CONFIG_REQUEST, CONFIG_SUCCESS, CONFIG_FAILURE, CONFIG_INITIALISED } from 'app/actions/ConfigActions';
 import { config } from 'reducers';
 
 import configJson from '../../data/config.json';
@@ -53,6 +53,19 @@ describe('ConfigReducer', ()=>{
         payload: null,
         data: null,
         error: 404
+    };
+    expect(config(initialState, action)).toEqual(expectedState);
+  });
+
+  it('should handle CONFIG_INITIALISED', ()=>{
+    const action = { type: CONFIG_INITIALISED };
+    const expectedState = {
+        type: CONFIG_INITIALISED,
+        isFetching: false,
+        success: false,
+        payload: null,
+        data: null,
+        error: null
     };
     expect(config(initialState, action)).toEqual(expectedState);
   });

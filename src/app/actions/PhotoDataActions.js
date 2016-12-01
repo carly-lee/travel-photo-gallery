@@ -10,11 +10,10 @@ export function photoDataRequest() {
 }
 
 export const PHOTO_DATA_SUCCESS = 'PHOTO_DATA_SUCCESS';
-export function photoDataSuccess(payload, city) {
+export function photoDataSuccess(payload) {
   return {
     type: PHOTO_DATA_SUCCESS,
-    payload: payload,
-    city: city
+    payload: payload
   }
 }
 
