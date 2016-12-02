@@ -25,7 +25,7 @@ export function photoDataFailure(error) {
   }
 }
 
-export function requestPhotoData( photoDataUrl, city ) {
+export function requestPhotoData( photoDataUrl ) {
 
   return dispatch => {
     dispatch(photoDataRequest());
@@ -34,7 +34,7 @@ export function requestPhotoData( photoDataUrl, city ) {
     return fetch(fetchPath)
       .then(getResponse)
       .then(response =>{
-        dispatch(photoDataSuccess(response, city));
+        dispatch(photoDataSuccess(response));
       })
       .catch(response => {
         dispatch(photoDataFailure(response.status));

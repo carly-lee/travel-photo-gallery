@@ -12,8 +12,7 @@ To install this project you need npm.
 
 ## Running
 
-- The development server will be running on port 3000.
-- To run dev server with hot loader and dev-tool :
+- The development server will be running on port 3000. To run dev server with hot loader and dev-tool :
 
 ```bash
 $ npm start
@@ -32,5 +31,6 @@ $ npm test
 * Add Carousel on main page.
 * Add bullet or some sort of pagenator on the list and Carousel.
 * Put the actual images.
+* Add infinite scroll.
 
-and so on...? 
+and so on...?

@@ -5,7 +5,7 @@ import { HorizontalList } from 'components/horizontallist';
 
 describe('<HorizontalList />', ()=>{
   let wrapper;
-  let props = { title:'London' };
+  let props = { title:'London', photos: [{"url":"/images/", "location":"Oxford Street"},{"url":"/images/", "location":"Oxford Street"}] };
 
   const setup = ()=>{
     wrapper = mount( <HorizontalList {...props} />);
