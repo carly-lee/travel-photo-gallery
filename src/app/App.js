@@ -22,17 +22,17 @@ export class App extends Component {
     if( config.type === CONFIG_INITIALISED ) return;
     if( config.data ){
       this.props.configInitialised();
-      for( let key in config.data ){
-        this.props.requestPhotoData( config.data[key].url );
+      for( let key in config.data.photoData ){
+        this.props.requestPhotoData( config.data.photoData[key].url );
       }
     }
   }
 
   _getHorizontalScroll(config, photoData){
-    if( Object.keys(config.data).length === Object.keys(photoData.data).length ){
+    if( Object.keys(config.data.photoData).length === Object.keys(photoData.data).length ){
       let list = [];
       for( let key in photoData.data ){
-        list.push(<HorizontalList key={key} title={config.data[key].name} photos={photoData.data[key]}/>);
+        list.push(<HorizontalList key={key} title={config.data.photoData[key].name} photos={photoData.data[key]} />);
       }
       return list;
     }
@@ -44,7 +44,7 @@ export class App extends Component {
     if( photoData.data ){
       return(
         <div>
-          <Carousel />
+          <Carousel list={config.data.carousel} />
           {this._getHorizontalScroll(config, photoData)}
         </div>
       )
@@ -61,7 +61,9 @@ export class App extends Component {
 App.propTypes = {
   config: React.PropTypes.object,
   photoData: React.PropTypes.object,
-  requestConfig: React.PropTypes.func.isRequired
+  requestConfig: React.PropTypes.func.isRequired,
+  requestPhotoData: React.PropTypes.func.isRequired,
+  configInitialised: React.PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
