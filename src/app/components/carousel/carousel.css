@@ -1,13 +1,12 @@
 .carousel {
   width: 100%;
   height: 500px;
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative;
+  margin-bottom: 50px;
 }
 
 .textContainer {
   position: absolute;
+  z-index: 1;
 }
 
 .title {
@@ -18,11 +17,12 @@
   margin-top: 0;
 }
 
-.itemContainer {
-
-}
-
-.carouselItem {
-  width: 1135px;
-  margin: 0 0 0 auto ;
+.carouselBackground {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
 }

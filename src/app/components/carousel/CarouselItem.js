@@ -7,8 +7,7 @@ export default class CarouselItem extends Component {
     const { data } = this.props;
 
     return(
-      <div className={styles.carouselItem}>
-        <img src={data.src} />
+      <div className={styles.carouselBackground} style={{backgroundImage:"url("+data.src+")"}}>
       </div>
     );
   }
