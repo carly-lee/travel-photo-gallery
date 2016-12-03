@@ -60,7 +60,7 @@ export default class HorizontalList extends Component {
     let posX;
     return this.props.photos.map((val, idx, arr)=>{
       posX = width * (idx + this._getPageSize()*currentPage);
-      return <ListItem key={idx} index={idx} posX={posX} width={width} onClick={this._onItemClick} />;
+      return <ListItem key={idx} index={idx} posX={posX} width={width} data={val} onClick={this._onItemClick} />;
     });
   }
 

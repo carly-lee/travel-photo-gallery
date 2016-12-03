@@ -71,9 +71,8 @@ module.exports = {
       {test: /\.modernizrrc$/, loader: 'modernizr'}
     ]
   },
-  postcss: function() {
-    return [
-      autoprefixer({
+  postcss: [
+    autoprefixer({
         browsers: [
           '>1%',
           'last 4 versions',
@@ -81,8 +80,7 @@ module.exports = {
           'not ie < 9', // React doesn't support IE8 anyway
         ]
       }),
-    ];
-  },
+  ],
   node: {
     __dirname: true,
     fs: 'empty',

@@ -48,15 +48,14 @@ module.exports = {
     ],
     loaders:[
       {test: /\.js$/, loaders: ['react-hot','babel'], include: path.resolve(__dirname, 'src')},
-      {test: /\.css$/, loader: 'style!css?modules&importLoaders=1&localIdentName=[name]_[local]_[hash:base64:5]!postcss', include: path.resolve(__dirname, 'src')},
+      {test: /\.css$/, loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]_[local]_[hash:base64:5]!postcss-loader', include: path.resolve(__dirname, 'src')},
       {test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,loader: 'file?name=[name].[ext]'},
       {test: /\.json$/,loader: 'json'},
       {test: /\.svg$/,loaders: ['react-svgdom', 'svgo']}
     ]
   },
-  postcss: function() {
-    return [
-      autoprefixer({
+  postcss: [
+    autoprefixer({
         browsers: [
           '>1%',
           'last 4 versions',
@@ -64,8 +63,7 @@ module.exports = {
           'not ie < 9', // React doesn't support IE8 anyway
         ]
       }),
-    ];
-  },
+  ],
   node: {
     __dirname: true,
     fs: 'empty',

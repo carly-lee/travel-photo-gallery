@@ -19,12 +19,12 @@ export default class Carousel extends Component {
 
   render(){
     const { list } = this.props;
-    
+
     return(
       <div className={styles.carousel}>
         { this._getItems( list )}
         <div className={styles.textContainer}>
-          <h1 className={styles.title}>My travel photo gallery</h1>
+          <h1 className={styles.title}>My travel<br /> photo gallery</h1>
           <p className={styles.description}>These are photos I have taken while travel several cities.</p>
         </div>
       </div>
