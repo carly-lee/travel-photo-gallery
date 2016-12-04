@@ -27,7 +27,6 @@ $ npm test
 
 ## To do
 
-* Control previous and next button.
 * Add zoom image popup.
 * Make responsive.
 * Add bullet or some sort of pagenator on the list and Carousel.

@@ -5,13 +5,13 @@ import { PageButton } from 'components/horizontallist';
 
 describe('<PageButton />', ()=>{
   let wrapper;
-  let props = { direction: -1, onClick: ()=>{} };
+  let props = { direction: 1, onClick: ()=>{} };
 
   const setup = ()=>{
     wrapper = mount( <PageButton {...props} /> );
   }
 
-  it('renders the left PageButton', ()=>{
+  it('renders the prev PageButton', ()=>{
     setup();
     expect( wrapper.find('.pageButtonLeft').length ).toEqual(1);
   });

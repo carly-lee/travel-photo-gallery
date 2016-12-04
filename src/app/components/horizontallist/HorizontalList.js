@@ -12,12 +12,14 @@ export default class HorizontalList extends Component {
       this.state = {
           currentIndex: 0,
           width: 0,
-          currentPage: 0
+          currentPage: 0,
+          pageSize: 0,
+          maxPage: 0
       }
   }
 
   componentDidMount() {
-    this.setState({ width: this._getWidth() });
+    this.setState({ width: this._getWidth(), pageSize: this._getPageSize(), maxPage: this._getMaxPage() });
     window.addEventListener('resize', this._onWindowResize);
   }
 
@@ -26,11 +28,18 @@ export default class HorizontalList extends Component {
   }
 
   _onWindowResize = (event) => {
-    this.setState({ width: this._getWidth(), pageSize: this._getPageSize() });
+    this.setState({ width: this._getWidth(), currentPage:0,
+      pageSize: this._getPageSize(),
+      maxPage: this._getMaxPage() });
   }
 
   _getWidth = ()=>{
     return parseInt(window.innerWidth/this._getPageSize());
+  }
+
+  _getMaxPage = ()=>{
+    const maxPage = this.props.photos.length/this._getPageSize();
+    return maxPage % 1 === 0 ? maxPage-1 : parseInt(maxPage);
   }
 
   _getPageSize(){
@@ -44,22 +53,24 @@ export default class HorizontalList extends Component {
   }
 
   _onPageButtonClick = ( direction )=>{
-    const { currentPage } = this.state;
-    if( direction ){
-      this.setState({currentPage: currentPage-direction });
+    const { currentPage, maxPage } = this.state;
+
+    if( direction === BUTTON_DIRECTION.NEXT ){
+      if( -1*currentPage < maxPage ){
+        this.setState({currentPage: currentPage+direction });
+      }
     }else{
       if( currentPage ){
-        this.setState({currentPage: currentPage-direction });
+        this.setState({currentPage: currentPage+direction });
       }
     }
-    console.log( '_onPageButtonClick', direction, currentPage+direction );
   }
 
   _getListItems = ()=>{
-    const { currentPage, width } = this.state;
+    const { currentPage, width, pageSize } = this.state;
     let posX;
     return this.props.photos.map((val, idx, arr)=>{
-      posX = width * (idx + this._getPageSize()*currentPage);
+      posX = width * (idx + pageSize*currentPage);
       return <ListItem key={idx} index={idx} posX={posX} width={width} data={val} onClick={this._onItemClick} />;
     });
   }
@@ -74,8 +85,8 @@ export default class HorizontalList extends Component {
           <span className={styles.date}> {date}</span>
         </div>
         <div className={styles.listContainer}>
-          <PageButton direction={BUTTON_DIRECTION.LEFT} onClick={this._onPageButtonClick} />
-          <PageButton direction={BUTTON_DIRECTION.RIGHT} onClick={this._onPageButtonClick} />
+          <PageButton direction={BUTTON_DIRECTION.PREV} onClick={this._onPageButtonClick} />
+          <PageButton direction={BUTTON_DIRECTION.NEXT} onClick={this._onPageButtonClick} />
           { this._getListItems() }
         </div>
       </div>

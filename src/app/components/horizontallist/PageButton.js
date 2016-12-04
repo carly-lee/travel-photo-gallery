@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { IconTypes, Icon } from 'components/icon';
 import styles from './horizontallist.css';
 
-export const BUTTON_DIRECTION = { LEFT: -1, RIGHT:1 };
+export const BUTTON_DIRECTION = { PREV: 1, NEXT:-1 };
 
 export default class PageButton extends Component {
 
@@ -15,7 +15,7 @@ export default class PageButton extends Component {
   render(){
     const { direction } = this.props;
 
-    if( direction === BUTTON_DIRECTION.LEFT ){
+    if( direction === BUTTON_DIRECTION.PREV ){
       return(
         <div className={styles.pageButtonLeft} onClick={this._onClick}>
           <Icon iconType={IconTypes.ARROW_LEFT} />
