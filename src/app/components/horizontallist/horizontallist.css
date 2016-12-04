@@ -1,7 +1,14 @@
+.titleContainer {
+  text-transform: uppercase;
+}
+
 .title {
   color: lime;
   font-size: 32px;
-  text-transform: uppercase;
+}
+
+.date {
+  font-size: 14px;
 }
 
 .listContainer {

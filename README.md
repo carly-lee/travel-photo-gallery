@@ -27,10 +27,10 @@ $ npm test
 
 ## To do
 
+* Control previous and next button.
+* Add zoom image popup.
 * Make responsive.
-* Add Carousel on main page.
 * Add bullet or some sort of pagenator on the list and Carousel.
-* Put the actual images.
 * Add infinite scroll.
 
 and so on...?

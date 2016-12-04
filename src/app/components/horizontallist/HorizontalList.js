@@ -65,11 +65,14 @@ export default class HorizontalList extends Component {
   }
 
   render(){
-    const { title } = this.props;
+    const { title, date } = this.props;
 
     return(
       <div>
-        <div className={styles.title}>{title}</div>
+        <div className={styles.titleContainer}>
+          <span className={styles.title}>{title}</span>
+          <span className={styles.date}> {date}</span>
+        </div>
         <div className={styles.listContainer}>
           <PageButton direction={BUTTON_DIRECTION.LEFT} onClick={this._onPageButtonClick} />
           <PageButton direction={BUTTON_DIRECTION.RIGHT} onClick={this._onPageButtonClick} />
@@ -82,5 +85,6 @@ export default class HorizontalList extends Component {
 
 HorizontalList.propTypes = {
   title: React.PropTypes.string.isRequired,
+  date: React.PropTypes.string,
   photos: React.PropTypes.array.isRequired
 }

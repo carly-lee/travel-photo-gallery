@@ -32,7 +32,10 @@ export class App extends Component {
     if( Object.keys(config.data.photoData).length === Object.keys(photoData.data).length ){
       let list = [];
       for( let key in photoData.data ){
-        list.push(<HorizontalList key={key} title={config.data.photoData[key].name} photos={photoData.data[key]} />);
+        list.push(<HorizontalList key={key}
+          title={config.data.photoData[key].name}
+          date={config.data.photoData[key].date}
+          photos={photoData.data[key]} />);
       }
       return list;
     }

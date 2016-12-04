@@ -8,12 +8,14 @@
   position: absolute;
   z-index: 1;
   bottom: 0;
+  margin-left: 15px;
 }
 
 .title {
   margin-bottom: 0;
   text-transform: uppercase;
   font-size: 70px;
+  text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .description {
