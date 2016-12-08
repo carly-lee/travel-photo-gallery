@@ -1,4 +1,4 @@
-export const SERVER = (process.env.NODE_ENV === 'production') ? './' : 'http://localhost:3000';
+export const SERVER = (process.env.NODE_ENV === 'production') ? '' : 'http://localhost:3000';
 
 export const PAGE_SIZE = {
   MOBILE: 2,
