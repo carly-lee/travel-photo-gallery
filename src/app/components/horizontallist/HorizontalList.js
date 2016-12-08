@@ -57,7 +57,6 @@ export default class HorizontalList extends Component {
 
     if( direction === BUTTON_DIRECTION.NEXT ){
       if( -1*currentPage < maxPage ){
-        console.log( 'Next - currentPage:', currentPage, 'nextPage:', currentPage+direction );
         this.setState({currentPage: currentPage+direction });
       }
     }else{
