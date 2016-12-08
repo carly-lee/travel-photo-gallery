@@ -6,7 +6,7 @@ import { Icon, IconTypes } from 'components/icon';
 
 describe('<PageButton />', ()=>{
   let wrapper;
-  let onClick = jest.fn();
+  const onClick = jest.fn();
   let props = { direction: 1, onClick: onClick };
 
   const setup = ()=>{
@@ -16,7 +16,7 @@ describe('<PageButton />', ()=>{
   it('renders the prev PageButton', ()=>{
     setup();
     expect( wrapper.find('.pageButtonLeft').length ).toEqual(1);
-    expect( wrapper.contains(<Icon iconType={IconTypes.ARROW_LEFT} />) ).toBe(true);
+    expect( wrapper.find('.'+IconTypes.ARROW_LEFT).length ).toEqual(1);
   });
 
   it('calls onClick with the right parameter when button is clicked', ()=>{
@@ -29,6 +29,6 @@ describe('<PageButton />', ()=>{
     props.direction = -1;
     setup();
     expect( wrapper.find('.pageButtonRight').length ).toEqual(1);
-    expect( wrapper.contains(<Icon iconType={IconTypes.ARROW_RIGHT} />) ).toBe(true);
+    expect( wrapper.find('.'+IconTypes.ARROW_RIGHT).length ).toEqual(1);
   });
 });

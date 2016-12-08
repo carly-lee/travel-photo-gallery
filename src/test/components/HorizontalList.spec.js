@@ -6,7 +6,8 @@ import londonJson from '../../data/london.json';
 
 describe('<HorizontalList />', ()=>{
   let wrapper;
-  let props = { title:'London', date: "Dec, 2014 ~ Aug, 2016", photos: londonJson.photos };
+  const onPhotoClick = jest.fn();
+  let props = { id:'ld', title:'London', date: "Dec, 2014 ~ Aug, 2016", photos: londonJson.photos, onPhotoClick };
 
   beforeEach(()=>{
     wrapper = mount( <HorizontalList {...props} />);

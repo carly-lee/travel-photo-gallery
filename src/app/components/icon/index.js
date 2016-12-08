@@ -5,13 +5,14 @@ import styles from './icon.css';
 
 export const IconTypes = {
   ARROW_LEFT: 'chevron-left',
-  ARROW_RIGHT: 'chevron-right'
+  ARROW_RIGHT: 'chevron-right',
+  X: 'x'
 }
 
 export class Icon extends React.Component {
 
   render(){
-    const { iconType } = this.props;
+    const { iconType, className } = this.props;
 
     if(process.env.NODE_ENV==='test' ) {
       return <div className={iconType}></div>
@@ -19,7 +20,7 @@ export class Icon extends React.Component {
 
     if( iconType ){
       const svg = octicons[iconType].toSVG({"class":styles.icon});
-      return <div className={styles.iconContainer} dangerouslySetInnerHTML={{ __html:svg }} />;
+      return <div className={className || ''} dangerouslySetInnerHTML={{ __html:svg }} />;
     }else{
       return <div>Missing icon</div>;
     };
@@ -27,5 +28,6 @@ export class Icon extends React.Component {
 }
 
 Icon.propTypes = {
-  iconType: React.PropTypes.string.isRequired
+  iconType: React.PropTypes.string.isRequired,
+  className: React.PropTypes.string
 }

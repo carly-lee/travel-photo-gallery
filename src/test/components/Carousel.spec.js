@@ -8,12 +8,11 @@ describe('<Carousel />', ()=>{
   let wrapper;
   let props = { list:config.carousel };
 
-  const setup = ()=>{
+  beforeEach(()=>{
     wrapper = mount( <Carousel {...props} /> );
-  }
+  });
 
   it('renders Carousel', ()=>{
-    setup();
     expect( wrapper.find('.carousel').length ).toEqual(1);
     expect( wrapper.find('.title').length ).toEqual(1);
     expect( wrapper.find(CarouselItem).length).toEqual( props.list.length );

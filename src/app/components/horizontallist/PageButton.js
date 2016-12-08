@@ -18,13 +18,13 @@ export default class PageButton extends Component {
     if( direction === BUTTON_DIRECTION.PREV ){
       return(
         <div className={styles.pageButtonLeft} onClick={this._onClick}>
-          <Icon iconType={IconTypes.ARROW_LEFT} />
+          <Icon iconType={IconTypes.ARROW_LEFT} className={styles.pageButtonIcon} />
         </div>
       )
     }else{
       return(
         <div className={styles.pageButtonRight} onClick={this._onClick}>
-          <Icon iconType={IconTypes.ARROW_RIGHT} />
+          <Icon iconType={IconTypes.ARROW_RIGHT} className={styles.pageButtonIcon} />
         </div>
       )
     }

@@ -48,8 +48,9 @@ export default class HorizontalList extends Component {
     return PAGE_SIZE.MOBILE;
   }
 
-  _onItemClick( index ){
-    console.log( 'onItemClick', index );
+  _onItemClick = ( index )=>{
+    const { id, onPhotoClick } = this.props;
+    onPhotoClick({ id, index });
   }
 
   _onPageButtonClick = ( direction )=>{
@@ -97,5 +98,7 @@ export default class HorizontalList extends Component {
 HorizontalList.propTypes = {
   title: React.PropTypes.string.isRequired,
   date: React.PropTypes.string,
-  photos: React.PropTypes.array.isRequired
+  photos: React.PropTypes.array.isRequired,
+  id: React.PropTypes.string.isRequired,
+  onPhotoClick: React.PropTypes.func.isRequired
 }
