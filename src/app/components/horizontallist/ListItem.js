@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import { SERVER } from 'app/Constants';
 import styles from './listitem.css';
 
 export default class ListItem extends Component {
@@ -14,7 +15,7 @@ export default class ListItem extends Component {
 
     return (
       <div className={styles.listItem} style={{left:posX}} onClick={this._onClick}>
-        <img src={ data.thumbnail } className={styles.thumbnail} />
+        <img src={ SERVER + data.thumbnail } className={styles.thumbnail} />
         <div className={styles.listItemCover} />
       </div>
     );

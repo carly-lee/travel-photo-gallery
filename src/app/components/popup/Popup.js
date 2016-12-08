@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { IconTypes, Icon } from 'components/icon';
+import { SERVER } from 'app/Constants';
 import styles from './popup.css';
 
 export default class Popup extends Component {
@@ -18,7 +19,7 @@ export default class Popup extends Component {
     return(
       <div className={styles.container} style={{top:this._getScrollY()}} onClick={closePopup}>
         <div className={styles.content}>
-          <img src={data.src} />
+          <img src={ SERVER + data.src} />
           <Icon className={styles.close} iconType={IconTypes.X} />
         </div>
       </div>

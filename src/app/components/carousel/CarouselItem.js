@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import { SERVER } from 'app/Constants';
 import styles from './carousel.css';
 
 export default class CarouselItem extends Component {
@@ -7,7 +8,7 @@ export default class CarouselItem extends Component {
     const { data } = this.props;
 
     return(
-      <div className={styles.carouselBackground} style={{backgroundImage:"url("+data.src+")"}}>
+      <div className={styles.carouselBackground} style={{backgroundImage:"url("+SERVER+data.src+")"}}>
       </div>
     );
   }

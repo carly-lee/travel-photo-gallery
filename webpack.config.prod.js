@@ -67,8 +67,7 @@ module.exports = {
       {test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&-autoprefixer!postcss'), include: path.resolve(__dirname, 'src')},
       {test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,loader: 'file'},
       {test: /\.json$/,loader: 'json'},
-      {test: /\.svg$/,loaders: ['react-svgdom', 'svgo']},
-      {test: /\.modernizrrc$/, loader: 'modernizr'}
+      {test: /\.svg$/,loaders: ['react-svgdom', 'svgo']}
     ]
   },
   postcss: [
