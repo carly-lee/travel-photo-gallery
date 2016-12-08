@@ -15,7 +15,7 @@ module.exports = {
     './src/app/index.prod.js'
   ],
   output:{
-    path: path.join(__dirname, '/gh-pages/'),
+    path: path.join(__dirname, '/build/'),
     publicPath: '/',
     filename: 'bundle.js'
   },
