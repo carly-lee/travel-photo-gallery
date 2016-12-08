@@ -1,0 +1,21 @@
+{
+  "carousel":[
+    {"name":"London", "src":"/images/Carousel/London_0.jpg"},
+    {"name":"London", "src":"/images/Carousel/London_1.jpg"},
+    {"name":"London", "src":"/images/Carousel/London_2.jpg"},
+    {"name":"London", "src":"/images/Carousel/London_3.jpg"},
+    {"name":"Paris", "src":"/images/Carousel/Paris_0.jpg"},
+    {"name":"Belgium", "src":"/images/Carousel/Belgium_0.jpg"},
+    {"name":"Rome", "src":"/images/Carousel/Rome_0.jpg"},
+    {"name":"Rome", "src":"/images/Carousel/Rome_1.jpg"},
+    {"name":"New York", "src":"/images/Carousel/NewYork_0.jpg"},
+    {"name":"New York", "src":"/images/Carousel/NewYork_1.jpg"},
+    {"name":"New York", "src":"/images/Carousel/NewYork_2.jpg"}
+  ],
+  "photoData":{
+    "ld":{"name": "London", "date": "Dec, 2014 ~ Aug, 2016", "url":"/data/london.json"},
+    "ny":{"name": "New York", "date": "May, 2016", "url":"/data/ny.json"},
+    "ro":{"name": "Rome", "date": "April, 2016", "url":"/data/paris.json"},
+    "pr":{"name": "Paris", "date": "May, 2015", "url":"/data/rome.json"}
+  }
+}
