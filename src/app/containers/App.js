@@ -48,7 +48,7 @@ export class App extends Component {
 
     if( photoData.data ){
       const popupData = popup && popup.type === OPEN_POPUP ? photoData.data[popup.data.id][popup.data.index] : null;
-      
+
       return(
         <div>
           <Carousel list={config.data.carousel} />

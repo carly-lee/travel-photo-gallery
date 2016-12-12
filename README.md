@@ -30,5 +30,6 @@ $ npm test
 * Make responsive.
 * Add bullet or some sort of pagenator on the list and Carousel.
 * Add infinite scroll.
+* Add pre-loader.
 
 and so on...?

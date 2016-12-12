@@ -1,16 +1,16 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { App } from 'app/App';
+import { App } from 'containers/App';
 import { HorizontalList } from 'components/horizontallist';
 import { Popup } from 'components/popup';
 import { Carousel } from 'components/carousel';
 import { OPEN_POPUP } from 'actions/PopupActions';
-import configData from '../data/config.json';
-import ld from '../data/london.json';
-import ny from '../data/ny.json';
-import pr from '../data/paris.json';
-import ro from '../data/rome.json';
+import configData from '../../data/config.json';
+import ld from '../../data/london.json';
+import ny from '../../data/ny.json';
+import pr from '../../data/paris.json';
+import ro from '../../data/rome.json';
 
 describe('<App />', () => {
   let wrapper;

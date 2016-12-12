@@ -18,7 +18,11 @@
     "webpack",
     "gallery"
   ],
-  "author": "Carly Lee",
+  "author": {
+    "name": "Carly Lee",
+    "email": "carly.l86@gmail.com",
+    "url": "https://github.com/carly-lee"
+  },
   "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/carly-lee/travel-photo-gallery/issues"
@@ -100,6 +104,7 @@
       "<rootDir>/src/",
       "<rootDir>/src/app/",
       "<rootDir>/src/app/actions/",
+      "<rootDir>/src/app/containers/",
       "<rootDir>/src/app/components/",
       "<rootDir>/src/app/reducers/",
       "<rootDir>/src/app/utils/"

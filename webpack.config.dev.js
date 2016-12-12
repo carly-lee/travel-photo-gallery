@@ -29,6 +29,7 @@ module.exports = {
       store: path.join(__dirname,'src/app/store/dev'),
       actions: path.join(__dirname,'src/app/actions'),
       reducers: path.join(__dirname,'src/app/reducers'),
+      containers: path.join(__dirname,'src/app/containers'),
       components: path.join(__dirname,'src/app/components'),
       utils: path.join(__dirname,'src/app/utils')
     }
