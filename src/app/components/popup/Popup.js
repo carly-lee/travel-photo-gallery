@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Preload from 'react-preload';
 
 import { IconTypes, Icon } from 'components/icon';
 import { SERVER } from 'app/Constants';
@@ -13,13 +14,25 @@ export default class Popup extends Component {
     return supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
   }
 
+  _handleImageLoadError(smg){
+      // console.log('_handleImageLoadError smg = ', smg);
+  }
+
+  _handleImageLoadSuccess(smg){
+      // console.log('_handleImageLoadSuccess smg = ', smg);
+  }
+
   render(){
     const{ closePopup, data } = this.props;
+    const imagePath = SERVER + data.src;
+    const loadingIndicator = (<div>Loading...</div>);
 
     return(
       <div className={styles.container} style={{top:this._getScrollY()}} onClick={closePopup}>
         <div className={styles.content}>
-          <img src={ SERVER + data.src} />
+        <Preload loadingIndicator={loadingIndicator} images={[imagePath]} autoResolveDelay={3000} onError={this._handleImageLoadError} onSuccess={this._handleImageLoadSuccess} resolveOnError={true} mountChildren={true}>
+          <img src={imagePath} alt={data.location} />
+        </Preload>
           <Icon className={styles.close} iconType={IconTypes.X} />
         </div>
       </div>

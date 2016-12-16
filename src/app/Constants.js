@@ -2,7 +2,7 @@ export const SERVER = (process.env.NODE_ENV === 'production') ? '.' : 'http://lo
 
 export const PAGE_SIZE = {
   MOBILE: 2,
-  TABLET: 5,
+  TABLET: 4,
   DESKTOP: 7
 }
 

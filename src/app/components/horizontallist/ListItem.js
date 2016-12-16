@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Preload from 'react-preload';
 
 import { SERVER } from 'app/Constants';
 import styles from './listitem.css';
@@ -10,12 +11,22 @@ export default class ListItem extends Component {
     onClick( index );
   }
 
+  _handleImageLoadError(){
+  }
+
+  _handleImageLoadSuccess(){
+  }
+
   render(){
-    const { posX, index, data } = this.props;
+    const { posX, data } = this.props;
+    const loadingIndicator = (<div>Loading...</div>);
+    const imagePath = SERVER + data.thumbnail;
 
     return (
       <div className={styles.listItem} style={{left:posX}} onClick={this._onClick}>
-        <img src={ SERVER + data.thumbnail } className={styles.thumbnail} />
+      <Preload loadingIndicator={loadingIndicator} images={[imagePath]} autoResolveDelay={3000} onError={this._handleImageLoadError} onSuccess={this._handleImageLoadSuccess} resolveOnError={true} mountChildren={true}>
+        <img src={ imagePath } className={styles.thumbnail} alt={data.location} />
+      </Preload>
         <div className={styles.listItemCover} />
       </div>
     );

@@ -16,6 +16,7 @@ var server = new WebpackDevServer(webpack(config), {
   watchOptions: {
     ignored: /node_modules/
   },
+  quiet:false,
   hot: true,
   inline: true,
   historyApiFallback: true,

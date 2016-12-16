@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import Preload from 'react-preload';
 
 import { Popup } from 'components/popup';
 import { Icon, IconTypes } from 'components/icon';
@@ -22,7 +23,8 @@ describe('<Popup />', ()=>{
     expect(closePopup).toHaveBeenCalled();
   });
 
-  it('shows the right image', ()=>{
-    expect(wrapper.find('img').html()).toContain(props.data.src);
+  it('shows a pre-loader', ()=>{
+    expect(wrapper.find(Preload).length).toEqual(1);
+    expect(wrapper.find(Preload).text()).toContain('Loading...');
   });
 });

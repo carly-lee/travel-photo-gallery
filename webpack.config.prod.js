@@ -1,14 +1,14 @@
 process.env.NODE_ENV = 'production';
 
 var path = require('path');
-var autoprefixer = require('autoprefixer');
 var webpack = require('webpack');
+var atImport = require('postcss-import');
+var cssnext = require('postcss-cssnext');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var publicPath = '/';
-var publicUrl = '';
 
 module.exports = {
   entry:[
@@ -16,7 +16,7 @@ module.exports = {
   ],
   output:{
     path: path.join(__dirname, '/build/'),
-    publicPath: '/',
+    publicPath: publicPath,
     filename: 'bundle.js'
   },
   resolve: {
@@ -72,14 +72,8 @@ module.exports = {
     ]
   },
   postcss: [
-    autoprefixer({
-        browsers: [
-          '>1%',
-          'last 4 versions',
-          'Firefox ESR',
-          'not ie < 9', // React doesn't support IE8 anyway
-        ]
-      }),
+    atImport({ path: ['.', './src', 'node_modules']}),
+    cssnext()
   ],
   node: {
     __dirname: true,

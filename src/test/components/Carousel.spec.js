@@ -12,7 +12,7 @@ describe('<Carousel />', ()=>{
     wrapper = mount( <Carousel {...props} /> );
   });
 
-  it('renders Carousel', ()=>{
+  it.skip('renders Carousel', ()=>{
     expect( wrapper.find('.carousel').length ).toEqual(1);
     expect( wrapper.find('.title').length ).toEqual(1);
     expect( wrapper.find(CarouselItem).length).toEqual( props.list.length );

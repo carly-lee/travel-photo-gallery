@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { requestConfig, configInitialised, CONFIG_INITIALISED } from 'actions/ConfigActions';
@@ -86,14 +87,9 @@ function mapStateToProps(state) {
   }
 };
 
+
 function mapDispatchToProps(dispatch) {
-  return {
-    requestConfig: () => dispatch(requestConfig()),
-    requestPhotoData: (photoDataUrl) => dispatch( requestPhotoData(photoDataUrl)),
-    configInitialised: ()=> dispatch(configInitialised()),
-    openPopup: (data)=> dispatch(openPopup(data)),
-    closePopup: ()=> dispatch(closePopup())
-  }
+  return bindActionCreators({ requestConfig, requestPhotoData, configInitialised, openPopup, closePopup }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

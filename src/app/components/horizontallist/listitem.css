@@ -1,13 +1,26 @@
+@import '../../styles/config.css';
+
 .listItem {
   position: absolute;
   z-index: 0;
   display: inline-block;
   overflow: hidden;
-  width: 200px;
-  height: 150px;
+  width: 160px;
+  height: 120px;
 
   background-color: #999999;
-  transition: left .5s ease-out;
+  transition: left .2s ease-out;
+
+  @media (min-width: tabletWidth) {
+    width: 188px;
+    height: 141px;
+  }
+
+  @media (min-width: desktopWidth) {
+    width: 200px;
+    height: 150px;
+    transition: left .5s ease-out;
+  }
 }
 
 .thumbnail {

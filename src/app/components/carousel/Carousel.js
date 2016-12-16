@@ -12,9 +12,10 @@ export default class Carousel extends Component {
   }
 
   _getItems( list ){
-    return list.map(( obj, idx, array )=>{
-      return <CarouselItem key={idx} data={obj} />;
-    });
+    return <CarouselItem data={list[0]} />;
+    // return list.map(( obj, idx, array )=>{
+    //   return <CarouselItem key={idx} data={obj} />;
+    // });
   }
 
   render(){

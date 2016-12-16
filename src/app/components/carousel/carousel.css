@@ -1,22 +1,44 @@
+@import '../../styles/config.css';
+
 .carousel {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 250px;
   margin-bottom: 50px;
+
+  @media (min-width: tabletWidth) {
+    height: 350px;
+  }
+
+  @media (min-width: desktopWidth) {
+    height: 500px;
+  }
 }
 
 .textContainer {
   position: absolute;
   z-index: 1;
   bottom: 0;
-  margin-left: 15px;
+  padding: 0 8px;
+
+  @media (min-width: desktopWidth) {
+    padding: 0 15px;
+  }
 }
 
 .title {
   margin-bottom: 0;
   text-transform: uppercase;
-  font-size: 70px;
+  font-size: 34px;
   text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
+
+  @media (min-width: tabletWidth) {
+    font-size: 48px;
+  }
+
+  @media (min-width: desktopWidth) {
+    font-size: 70px;
+  }
 }
 
 .description {
@@ -26,9 +48,17 @@
 .carouselBackground {
   position: absolute;
   width: 100%;
-  height: 500px;
+  height: 250px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   filter: blur(10px);
+
+  @media (min-width: tabletWidth) {
+    height: 350px;
+  }
+
+  @media (min-width: desktopWidth) {
+    height: 500px;
+  }
 }

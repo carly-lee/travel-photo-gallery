@@ -1,15 +1,27 @@
 import React, { Component } from 'react';
+import Preload from 'react-preload';
 
 import { SERVER } from 'app/Constants';
 import styles from './carousel.css';
 
 export default class CarouselItem extends Component {
+
+  _handleImageLoadError(smg){
+  }
+
+  _handleImageLoadSuccess(smg){
+  }
+
   render(){
     const { data } = this.props;
+    const loadingIndicator = (<div>Loading...</div>);
+    const imagePath = SERVER + data.src;
 
     return(
-      <div className={styles.carouselBackground} style={{backgroundImage:"url("+SERVER+data.src+")"}}>
-      </div>
+      <Preload loadingIndicator={loadingIndicator} images={[imagePath]} autoResolveDelay={3000} onError={this._handleImageLoadError} onSuccess={this._handleImageLoadSuccess} resolveOnError={true} mountChildren={true}>
+        <div className={styles.carouselBackground} style={{backgroundImage:"url("+imagePath+")"}}>
+        </div>
+      </Preload>
     );
   }
 }
