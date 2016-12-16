@@ -1,4 +1,4 @@
-@import './styles/fonts.css';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
 @import '../../node_modules/normalize.css/normalize.css';
 @import '../../node_modules/octicons/build/octicons.css';
 @import './styles/config.css';
@@ -6,7 +6,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'OpenSans', Fallback, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #eeeeee;
   background-color: #333333;
 }
