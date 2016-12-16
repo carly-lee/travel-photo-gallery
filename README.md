@@ -8,28 +8,27 @@ This repository could be updated anytime.
 To install this project you need npm.
 
 1. Clone this repository to your local.
-2. Run 'npm install'
+2. Run 'npm install' or 'yarn install'
 
 ## Running
 
 - The development server will be running on port 3000. To run dev server with hot loader and dev-tool :
 
 ```bash
-$ npm start
+$ npm start or yarn start
 ```
 
 ## Test
 
 For running unit tests :
 ```bash
-$ npm test
+$ npm test or yarn test
 ```
 
 ## To do
 
-* Make responsive.
 * Add bullet or some sort of pagenator on the list and Carousel.
 * Add infinite scroll.
-* Add pre-loader.
+* Make it pretty.
 
 and so on...?
