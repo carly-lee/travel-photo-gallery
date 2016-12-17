@@ -4,24 +4,24 @@ import { CarouselItem } from 'components/carousel';
 import styles from './carousel.css';
 
 export default class Carousel extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentIndex:0
-    }
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			currentIndex:0,
+		};
+	}
 
-  _getItems( list ){
-    return <CarouselItem data={list[0]} />;
+	_getItems( list ){
+		return <CarouselItem data={list[0]} />;
     // return list.map(( obj, idx, array )=>{
     //   return <CarouselItem key={idx} data={obj} />;
     // });
-  }
+	}
 
-  render(){
-    const { list } = this.props;
+	render(){
+		const { list } = this.props;
 
-    return(
+		return(
       <div className={styles.carousel}>
         { this._getItems( list )}
         <div className={styles.textContainer}>
@@ -29,10 +29,10 @@ export default class Carousel extends Component {
           <p className={styles.description}>These are photos I have taken while travel several cities.</p>
         </div>
       </div>
-    );
-  }
+		);
+	}
 }
 
 Carousel.propTypes = {
-  list: React.PropTypes.array.isRequired
-}
+	list: React.PropTypes.array.isRequired,
+};

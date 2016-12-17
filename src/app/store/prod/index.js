@@ -5,13 +5,13 @@ import * as reducers from 'reducers';
 
 export default function configureStore() {
 
-  const combinedReducers = combineReducers({
-      ...reducers
-  });
+	const combinedReducers = combineReducers({
+		...reducers,
+	});
 
-  const store = createStore( combinedReducers,
+	const store = createStore( combinedReducers,
                              applyMiddleware(thunk)
                            );
 
-  return store;
+	return store;
 }

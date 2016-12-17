@@ -6,26 +6,26 @@ import styles from './carousel.css';
 
 export default class CarouselItem extends Component {
 
-  _handleImageLoadError(smg){
-  }
+	_handleImageLoadError(smg){
+	}
 
-  _handleImageLoadSuccess(smg){
-  }
+	_handleImageLoadSuccess(smg){
+	}
 
-  render(){
-    const { data } = this.props;
-    const loadingIndicator = (<div>Loading...</div>);
-    const imagePath = SERVER + data.src;
+	render(){
+		const { data } = this.props;
+		const loadingIndicator = (<div>Loading...</div>);
+		const imagePath = SERVER + data.src;
 
-    return(
+		return(
       <Preload loadingIndicator={loadingIndicator} images={[imagePath]} autoResolveDelay={3000} onError={this._handleImageLoadError} onSuccess={this._handleImageLoadSuccess} resolveOnError={true} mountChildren={true}>
-        <div className={styles.carouselBackground} style={{backgroundImage:"url("+imagePath+")"}}>
+        <div className={styles.carouselBackground} style={{ backgroundImage:'url('+imagePath+')' }}>
         </div>
       </Preload>
-    );
-  }
+		);
+	}
 }
 
 CarouselItem.propTypes = {
-  data: React.PropTypes.object.isRequired
-}
+	data: React.PropTypes.object.isRequired,
+};

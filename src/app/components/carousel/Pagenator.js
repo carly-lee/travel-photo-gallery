@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 export default class Pagenator extends Component {
-  render(){
-    return(
+	render(){
+		return(
       <div>Pagenator</div>
-    )
-  }
+		);
+	}
 }
