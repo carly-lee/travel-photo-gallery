@@ -3,14 +3,14 @@ import thunk from 'redux-thunk';
 
 import * as reducers from 'reducers';
 
-export default function configureStore() {
+export default function configureStore(){
 
 	const combinedReducers = combineReducers({
 		...reducers,
 	});
 
 	const store = createStore( combinedReducers,
-                             applyMiddleware(thunk)
+                             applyMiddleware( thunk )
                            );
 
 	return store;

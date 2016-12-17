@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 
 import { Icon, IconTypes } from 'components/icon';
 
-describe('<Icon />', ()=>{
+describe( '<Icon />', ()=>{
 	let wrapper;
 	let props = { iconType: IconTypes.ARROW_LEFT };
 
@@ -11,8 +11,8 @@ describe('<Icon />', ()=>{
 		wrapper = mount( <Icon {...props} /> );
 	};
 
-	it('shows the left arrow icon', ()=>{
+	it( 'shows the left arrow icon', ()=>{
 		setup();
-		expect( wrapper.find('.'+IconTypes.ARROW_LEFT).length ).toEqual(1);
+		expect( wrapper.find( '.'+IconTypes.ARROW_LEFT ).length ).toEqual( 1 );
 	});
 });

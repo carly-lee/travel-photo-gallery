@@ -4,17 +4,17 @@ import Preload from 'react-preload';
 import { SERVER } from 'app/Constants';
 import styles from './carousel.css';
 
-export default class CarouselItem extends Component {
+export default class CarouselItem extends Component{
 
-	_handleImageLoadError(smg){
+	_handleImageLoadError(){
 	}
 
-	_handleImageLoadSuccess(smg){
+	_handleImageLoadSuccess(){
 	}
 
 	render(){
 		const { data } = this.props;
-		const loadingIndicator = (<div>Loading...</div>);
+		const loadingIndicator = ( <div>Loading...</div> );
 		const imagePath = SERVER + data.src;
 
 		return(

@@ -9,10 +9,10 @@ const initialState = {
 	error: null,
 };
 
-export function photoData( state = initialState, action ) {
+export function photoData( state = initialState, action ){
 	const { type, payload, error } = action;
 
-	switch (type) {
+	switch ( type ){
 	case PHOTO_DATA_REQUEST:
 		return Object.assign({}, state, {
 			type: type,
@@ -26,7 +26,7 @@ export function photoData( state = initialState, action ) {
 			success: true,
 			isFetching: false,
 			payload: payload,
-			data: Object.assign( {}, state.data, newData ),
+			data: Object.assign({}, state.data, newData ),
 		});
 	case PHOTO_DATA_FAILURE:
 		return Object.assign({}, state, {

@@ -5,27 +5,25 @@ import { IconTypes, Icon } from 'components/icon';
 import { SERVER } from 'app/Constants';
 import styles from './popup.css';
 
-export default class Popup extends Component {
+export default class Popup extends Component{
 
 	_getScrollY(){
 		const supportPageOffset = window.pageXOffset !== undefined;
-		const isCSS1Compat = ((document.compatMode || '') === 'CSS1Compat');
+		const isCSS1Compat = (( document.compatMode || '' ) === 'CSS1Compat' );
 
 		return supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
 	}
 
-	_handleImageLoadError(smg){
-      // console.log('_handleImageLoadError smg = ', smg);
+	_handleImageLoadError(){
 	}
 
-	_handleImageLoadSuccess(smg){
-      // console.log('_handleImageLoadSuccess smg = ', smg);
+	_handleImageLoadSuccess(){
 	}
 
 	render(){
 		const{ closePopup, data } = this.props;
 		const imagePath = SERVER + data.src;
-		const loadingIndicator = (<div>Loading...</div>);
+		const loadingIndicator = ( <div>Loading...</div> );
 
 		return(
       <div className={styles.container} style={{ top:this._getScrollY() }} onClick={closePopup}>

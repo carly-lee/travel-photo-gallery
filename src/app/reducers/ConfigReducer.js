@@ -9,10 +9,10 @@ const initialState = {
 	error: null,
 };
 
-export function config( state = initialState, action ) {
+export function config( state = initialState, action ){
 	const { type, payload, error } = action;
 
-	switch (type) {
+	switch ( type ){
 	case CONFIG_REQUEST:
 		return Object.assign({}, state, {
 			type: type,

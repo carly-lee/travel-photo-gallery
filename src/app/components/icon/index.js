@@ -9,21 +9,22 @@ export const IconTypes = {
 	X: 'x',
 };
 
-export class Icon extends React.Component {
+export class Icon extends React.Component{
 
 	render(){
 		const { iconType, className } = this.props;
 
-		if(process.env.NODE_ENV==='test' )
+		if( process.env.NODE_ENV==='test' ){
 			return <div className={iconType}></div>;
+		}
 
 
 		if( iconType ){
 			const svg = octicons[iconType].toSVG({ 'class':styles.icon });
 			return <div className={className || ''} dangerouslySetInnerHTML={{ __html:svg }} />;
-		}else
-	return <div>Missing icon</div>;
-
+		}else{
+			return <div>Missing icon</div>;
+		}
 	}
 }
 

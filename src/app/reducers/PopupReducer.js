@@ -5,10 +5,10 @@ const initialState = {
 	data: null,
 };
 
-export function popup( state = initialState, action ) {
+export function popup( state = initialState, action ){
 	const { type, data } = action;
 
-	switch (type) {
+	switch ( type ){
 	case OPEN_POPUP:
 		return Object.assign({}, state, { type, data });
 	case CLOSE_POPUP:

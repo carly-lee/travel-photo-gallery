@@ -3,7 +3,7 @@ import { config } from 'reducers';
 
 import configJson from '../../data/config.json';
 
-describe('ConfigReducer', ()=>{
+describe( 'ConfigReducer', ()=>{
 
 	const initialState = {
 		type: '',
@@ -14,11 +14,11 @@ describe('ConfigReducer', ()=>{
 		error: null,
 	};
 
-	it('should return the initial state', ()=>{
-		expect(config(undefined, {})).toEqual(initialState);
+	it( 'should return the initial state', ()=>{
+		expect( config( undefined, {})).toEqual( initialState );
 	});
 
-	it('should handle CONFIG_REQUEST', ()=>{
+	it( 'should handle CONFIG_REQUEST', ()=>{
 		const action = { type: CONFIG_REQUEST };
 		const expectedState = {
 			type: CONFIG_REQUEST,
@@ -28,10 +28,10 @@ describe('ConfigReducer', ()=>{
 			data: null,
 			error: null,
 		};
-		expect(config(initialState, action)).toEqual(expectedState);
+		expect( config( initialState, action )).toEqual( expectedState );
 	});
 
-	it('should handle CONFIG_SUCCESS', ()=>{
+	it( 'should handle CONFIG_SUCCESS', ()=>{
 		const action = { type: CONFIG_SUCCESS, payload:configJson };
 		const expectedState = {
 			type: CONFIG_SUCCESS,
@@ -41,10 +41,10 @@ describe('ConfigReducer', ()=>{
 			data: configJson,
 			error: null,
 		};
-		expect(config(initialState, action)).toEqual(expectedState);
+		expect( config( initialState, action )).toEqual( expectedState );
 	});
 
-	it('should handle CONFIG_FAILURE', ()=>{
+	it( 'should handle CONFIG_FAILURE', ()=>{
 		const action = { type: CONFIG_FAILURE, error:404 };
 		const expectedState = {
 			type: CONFIG_FAILURE,
@@ -54,10 +54,10 @@ describe('ConfigReducer', ()=>{
 			data: null,
 			error: 404,
 		};
-		expect(config(initialState, action)).toEqual(expectedState);
+		expect( config( initialState, action )).toEqual( expectedState );
 	});
 
-	it('should handle CONFIG_INITIALISED', ()=>{
+	it( 'should handle CONFIG_INITIALISED', ()=>{
 		const action = { type: CONFIG_INITIALISED };
 		const expectedState = {
 			type: CONFIG_INITIALISED,
@@ -67,6 +67,6 @@ describe('ConfigReducer', ()=>{
 			data: null,
 			error: null,
 		};
-		expect(config(initialState, action)).toEqual(expectedState);
+		expect( config( initialState, action )).toEqual( expectedState );
 	});
 });

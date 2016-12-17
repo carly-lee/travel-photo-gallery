@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import { CarouselItem } from 'components/carousel';
 import styles from './carousel.css';
 
-export default class Carousel extends Component {
-	constructor(props) {
-		super(props);
+export default class Carousel extends Component{
+	constructor( props ){
+		super( props );
 		this.state = {
 			currentIndex:0,
 		};

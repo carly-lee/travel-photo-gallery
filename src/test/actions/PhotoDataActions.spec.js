@@ -6,18 +6,18 @@ import { requestPhotoData, PHOTO_DATA_REQUEST, PHOTO_DATA_SUCCESS, PHOTO_DATA_FA
 import { SERVER, DATA_URL } from 'app/Constants';
 
 const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
+const mockStore = configureMockStore( middlewares );
 import london from '../../data/london.json';
 
-describe('PhotoDataActions', () => {
+describe( 'PhotoDataActions', () => {
 	afterEach(() => {
 		nock.cleanAll();
 	});
 
-	it('creates PHOTO_DATA_SUCCESS when fetching data has been done', () => {
-		nock(SERVER)
-      .get(DATA_URL.CONFIG)
-      .reply(200, london);
+	it( 'creates PHOTO_DATA_SUCCESS when fetching data has been done', () => {
+		nock( SERVER )
+      .get( DATA_URL.CONFIG )
+      .reply( 200, london );
 
 		const expectedActions = [
       { type: PHOTO_DATA_REQUEST },
@@ -26,9 +26,9 @@ describe('PhotoDataActions', () => {
 
 		const store = mockStore({ photoData:[]});
 
-		return store.dispatch(requestPhotoData( DATA_URL.CONFIG ))
+		return store.dispatch( requestPhotoData( DATA_URL.CONFIG ))
                 .then(() => { // return of async actions
-	expect(store.getActions()).toEqual(expectedActions);
+	expect( store.getActions()).toEqual( expectedActions );
 });
 	});
 });

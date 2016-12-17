@@ -23,24 +23,17 @@
         "plugin:react/recommended"
     ],
     "rules": {
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
+        "indent": [ "warn", "tab" ],
+        "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+        "linebreak-style": [ "error", "unix" ],
+        "quotes": [ "error", "single" ],
+        "semi": [ "error", "always" ],
         "comma-dangle": ["error", "always-multiline"],
         "no-cond-assign": ["error", "always"],
         "eqeqeq": ["error", "allow-null"],
         "array-callback-return": "error",
         "block-scoped-var":"error",
-        "curly": ["error", "multi"],
+        "curly": "error",
         "default-case":"error",
         "no-eval":"error",
         "no-implied-eval":"error",
@@ -51,6 +44,10 @@
         "no-unneeded-ternary":"error",
         "object-curly-spacing":["error", "always", { "arraysInObjects": false, "objectsInObjects": false }],
         "no-duplicate-imports":"error",
-        "no-case-declarations":"off"
+        "no-case-declarations":"off",
+        "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 3 }],
+        "space-in-parens":["error", "always", { "exceptions": ["{}", "[]", "()", "empty"] }],
+        "space-before-function-paren":["error", "never"],
+        "space-before-blocks": ["error", "never"]
     }
 }

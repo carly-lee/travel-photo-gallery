@@ -12,7 +12,7 @@ import ny from '../../data/ny.json';
 import pr from '../../data/paris.json';
 import ro from '../../data/rome.json';
 
-describe('<App />', () => {
+describe( '<App />', () => {
 	let wrapper;
 	const requestConfig = jest.fn();
 	const requestPhotoData = jest.fn();
@@ -26,43 +26,43 @@ describe('<App />', () => {
 	let props = { config:{ type:'', data:null }, photoData: { data:null }, popup: { type:'', data:null }, requestConfig, requestPhotoData, configInitialised, openPopup, closePopup };
 
 	const setup = ()=>{
-		wrapper = mount( <App {...props} />);
+		wrapper = mount( <App {...props} /> );
 	};
 
-	it('shows Loading when there is no data', () => {
+	it( 'shows Loading when there is no data', () => {
 		setup();
-		expect( wrapper.find('.loading').text() ).toEqual( 'Loading...' );
+		expect( wrapper.find( '.loading' ).text()).toEqual( 'Loading...' );
 	});
 
-	it('calls requestConfig when there is no config', () => {
+	it( 'calls requestConfig when there is no config', () => {
 		setup();
-		expect(requestConfig).toHaveBeenCalled();
+		expect( requestConfig ).toHaveBeenCalled();
 	});
 
-	it('calls configInitialised and requestPhotoData when received config data', () => {
+	it( 'calls configInitialised and requestPhotoData when received config data', () => {
 		setup();
 		wrapper.setProps({ config });
 		expect( wrapper.props().config ).toEqual( config );
-		expect(configInitialised).toHaveBeenCalled();
-		expect(requestPhotoData).toHaveBeenCalledTimes( Object.keys(configData.photoData).length );
+		expect( configInitialised ).toHaveBeenCalled();
+		expect( requestPhotoData ).toHaveBeenCalledTimes( Object.keys( configData.photoData ).length );
 	});
 
-	it('shows Carousel when there is config', ()=>{
+	it( 'shows Carousel when there is config', ()=>{
 		props = Object.assign({},props,{ config, photoData });
 		setup();
-		expect(wrapper.find(Carousel).length).toEqual(1);
+		expect( wrapper.find( Carousel ).length ).toEqual( 1 );
 	});
 
-	it('shows HorizontalList', ()=>{
+	it( 'shows HorizontalList', ()=>{
 		setup();
-		expect(wrapper.find(HorizontalList).length).toEqual(Object.keys(configData.photoData).length);
+		expect( wrapper.find( HorizontalList ).length ).toEqual( Object.keys( configData.photoData ).length );
 	});
 
-	it('shows Popup when there is popupData', ()=>{
+	it( 'shows Popup when there is popupData', ()=>{
 		setup();
-		expect(wrapper.find(Popup).length).toEqual(0);
-		wrapper.find('.listItem').first().simulate('click');
+		expect( wrapper.find( Popup ).length ).toEqual( 0 );
+		wrapper.find( '.listItem' ).first().simulate( 'click' );
 		wrapper.setProps({ popup });
-		expect(wrapper.find(Popup).length).toEqual(1);
+		expect( wrapper.find( Popup ).length ).toEqual( 1 );
 	});
 });

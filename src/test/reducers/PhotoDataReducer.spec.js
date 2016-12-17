@@ -4,7 +4,7 @@ import { photoData } from 'reducers';
 import londonJson from '../../data/london.json';
 import nyJson from '../../data/ny.json';
 
-describe('PhotoDataReducer', ()=>{
+describe( 'PhotoDataReducer', ()=>{
 
 	const initialState = {
 		type: '',
@@ -15,11 +15,11 @@ describe('PhotoDataReducer', ()=>{
 		error: null,
 	};
 
-	it('should return the initial state', ()=>{
-		expect(photoData(undefined, {})).toEqual(initialState);
+	it( 'should return the initial state', ()=>{
+		expect( photoData( undefined, {})).toEqual( initialState );
 	});
 
-	it('should handle PHOTO_DATA_REQUEST', ()=>{
+	it( 'should handle PHOTO_DATA_REQUEST', ()=>{
 		const action = { type: PHOTO_DATA_REQUEST };
 		const expectedState = {
 			type: PHOTO_DATA_REQUEST,
@@ -29,10 +29,10 @@ describe('PhotoDataReducer', ()=>{
 			data: null,
 			error: null,
 		};
-		expect(photoData(initialState, action)).toEqual(expectedState);
+		expect( photoData( initialState, action )).toEqual( expectedState );
 	});
 
-	it('should handle PHOTO_DATA_SUCCESS', ()=>{
+	it( 'should handle PHOTO_DATA_SUCCESS', ()=>{
 		const action = { type: PHOTO_DATA_SUCCESS, payload:londonJson };
 		const expectedState = {
 			type: PHOTO_DATA_SUCCESS,
@@ -42,7 +42,7 @@ describe('PhotoDataReducer', ()=>{
 			data: { 'ld':londonJson.photos },
 			error: null,
 		};
-		expect(photoData(initialState, action)).toEqual(expectedState);
+		expect( photoData( initialState, action )).toEqual( expectedState );
 
 		const action2 = { type: PHOTO_DATA_SUCCESS, payload:nyJson };
 		const expectedState2 = {
@@ -53,10 +53,10 @@ describe('PhotoDataReducer', ()=>{
 			data: { 'ld':londonJson.photos, 'ny':nyJson.photos },
 			error: null,
 		};
-		expect(photoData(expectedState, action2)).toEqual(expectedState2);
+		expect( photoData( expectedState, action2 )).toEqual( expectedState2 );
 	});
 
-	it('should handle PHOTO_DATA_FAILURE', ()=>{
+	it( 'should handle PHOTO_DATA_FAILURE', ()=>{
 		const action = { type: PHOTO_DATA_FAILURE, error: 404 };
 		const expectedState = {
 			type: PHOTO_DATA_FAILURE,
@@ -66,6 +66,6 @@ describe('PhotoDataReducer', ()=>{
 			data: null,
 			error: 404,
 		};
-		expect(photoData(initialState, action)).toEqual(expectedState);
+		expect( photoData( initialState, action )).toEqual( expectedState );
 	});
 });
