@@ -8,6 +8,7 @@
         "jest": true
     },
     "installedESLint": true,
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
@@ -30,6 +31,7 @@
         "semi": [ "error", "always" ],
         "comma-dangle": ["error", "always-multiline"],
         "no-cond-assign": ["error", "always"],
+        "no-unused-vars": "warn",
         "eqeqeq": ["error", "allow-null"],
         "array-callback-return": "error",
         "block-scoped-var":"error",
@@ -49,11 +51,10 @@
         "space-in-parens":["error", "always", { "exceptions": ["{}", "[]", "()", "empty"] }],
         "space-before-function-paren":["error", "never"],
         "space-before-blocks": ["error", "never"],
-        "react/no-did-mount-set-state": "error",
-        "react/no-did-update-set-state": "error",
+        "react/no-did-mount-set-state": "warn",
+        "react/no-did-update-set-state": "warn",
         "react/no-unescaped-entities": "warn",
-        "react/prefer-es6-class": ["error", "never"],
-        "react/sort-prop-types": ["error", { "requiredFirst":true }],
+        "react/prefer-es6-class": ["error", "always"],
         "react/jsx-curly-spacing":["error", "always", {"spacing":{"objectLiterals": "never"}}],
         "react/jsx-indent": ["error", "tab"],
         "react/jsx-no-bind": ["error", {"ignoreRefs":true}],
