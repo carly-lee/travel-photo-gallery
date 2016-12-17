@@ -45,7 +45,6 @@
     "babel-jest": "^17.0.2",
     "babel-loader": "^6.2.8",
     "babel-plugin-webpack-alias": "^2.1.2",
-    "babel-plugin-webpack-loaders": "^0.8.0",
     "babel-preset-react-app": "^1.0.0",
     "clean-webpack-plugin": "^0.1.14",
     "connect-history-api-fallback": "^1.3.0",
