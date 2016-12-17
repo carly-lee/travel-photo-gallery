@@ -10,7 +10,7 @@ describe( '<HorizontalList />', ()=>{
 	let props = { id:'ld', title:'London', date: 'Dec, 2014 ~ Aug, 2016', photos: londonJson.photos, onPhotoClick };
 
 	beforeEach(()=>{
-		wrapper = mount( <HorizontalList {...props} /> );
+		wrapper = mount( <HorizontalList { ...props } /> );
 	});
 
 	it( 'allows us to set props', ()=>{

@@ -6,14 +6,14 @@ import Inspector from 'redux-devtools-inspector';
 import DiffMonitor from 'redux-devtools-diff-monitor';
 
 const DevTools = createDevTools(
-  <DockMonitor toggleVisibilityKey='ctrl-h'
+	<DockMonitor toggleVisibilityKey='ctrl-h'
                changePositionKey='ctrl-q'
                changeMonitorKey='ctrl-m'
-               defaultIsVisible={false}>
-    <LogMonitor theme='tomorrow' />
-    <Inspector />
-    <DiffMonitor theme='tomorrow' />
-  </DockMonitor>
+               defaultIsVisible={ false }>
+		<LogMonitor theme='tomorrow' />
+		<Inspector />
+		<DiffMonitor theme='tomorrow' />
+	</DockMonitor>
 );
 
 export default DevTools;

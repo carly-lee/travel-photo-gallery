@@ -43,8 +43,8 @@ export default class HorizontalList extends Component {
   }
 
   _getPageSize(){
-    if( isDesktop(window) ) return PAGE_SIZE.DESKTOP;
-    if( isTablet(window) ) return PAGE_SIZE.TABLET;
+    if( isDesktop() ) return PAGE_SIZE.DESKTOP;
+    if( isTablet() ) return PAGE_SIZE.TABLET;
     return PAGE_SIZE.MOBILE;
   }
 

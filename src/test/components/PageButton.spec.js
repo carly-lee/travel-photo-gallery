@@ -10,7 +10,7 @@ describe( '<PageButton />', ()=>{
 	let props = { direction: 1, onClick: onClick };
 
 	const setup = ()=>{
-		wrapper = mount( <PageButton {...props} /> );
+		wrapper = mount( <PageButton { ...props } /> );
 	};
 
 	it( 'renders the prev PageButton', ()=>{

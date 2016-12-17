@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import { IconTypes, Icon } from 'components/icon';
 import styles from './horizontallist.css';
 
 export const BUTTON_DIRECTION = { PREV: 1, NEXT:-1 };
 
-export default class PageButton extends Component {
+export default class PageButton extends PureComponent {
 
   _onClick = ()=>{
     const { onClick, direction } = this.props;

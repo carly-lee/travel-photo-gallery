@@ -26,14 +26,14 @@ export default class Popup extends Component{
 		const loadingIndicator = ( <div>Loading...</div> );
 
 		return(
-      <div className={styles.container} style={{ top:this._getScrollY() }} onClick={closePopup}>
-        <div className={styles.content}>
-        <Preload loadingIndicator={loadingIndicator} images={[imagePath]} autoResolveDelay={3000} onError={this._handleImageLoadError} onSuccess={this._handleImageLoadSuccess} resolveOnError={true} mountChildren={true}>
-          <img src={imagePath} alt={data.location} />
-        </Preload>
-          <Icon className={styles.close} iconType={IconTypes.X} />
-        </div>
-      </div>
+			<div className={ styles.container } style={{ top:this._getScrollY() }} onClick={ closePopup }>
+				<div className={ styles.content }>
+					<Preload loadingIndicator={ loadingIndicator } images={ [imagePath] } autoResolveDelay={ 3000 } onError={ this._handleImageLoadError } onSuccess={ this._handleImageLoadSuccess } resolveOnError={ true } mountChildren={ true }>
+						<img src={ imagePath } alt={ data.location } />
+					</Preload>
+					<Icon className={ styles.close } iconType={ IconTypes.X } />
+				</div>
+			</div>
 		);
 	}
 }

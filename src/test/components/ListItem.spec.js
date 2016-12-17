@@ -9,7 +9,7 @@ describe( '<ListItem />', ()=>{
 	let props = { index:1, width: 200, posX:205, data:{ 'src':'/images/LD/LD_0.jpg', 'thumbnail':'/images/LD/thumbnail/LD_0.jpg', 'location':' ' }, onClick:onClick };
 
 	beforeEach(()=>{
-		wrapper = mount( <ListItem {...props} /> );
+		wrapper = mount( <ListItem { ...props } /> );
 	});
 
 	it( 'allows us to set props', ()=>{

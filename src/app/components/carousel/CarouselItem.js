@@ -18,10 +18,10 @@ export default class CarouselItem extends Component{
 		const imagePath = SERVER + data.src;
 
 		return(
-      <Preload loadingIndicator={loadingIndicator} images={[imagePath]} autoResolveDelay={3000} onError={this._handleImageLoadError} onSuccess={this._handleImageLoadSuccess} resolveOnError={true} mountChildren={true}>
-        <div className={styles.carouselBackground} style={{ backgroundImage:'url('+imagePath+')' }}>
-        </div>
-      </Preload>
+			<Preload loadingIndicator={ loadingIndicator } images={ [imagePath] } autoResolveDelay={ 3000 } onError={ this._handleImageLoadError } onSuccess={ this._handleImageLoadSuccess } resolveOnError={ true } mountChildren={ true }>
+				<div className={ styles.carouselBackground } style={{ backgroundImage:'url('+imagePath+')' }}>
+				</div>
+			</Preload>
 		);
 	}
 }

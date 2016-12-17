@@ -10,11 +10,11 @@ import './index.css';
 const store = configureStore();
 
 ReactDOM.render(
-  <Provider store={store}>
-    <div>
-      <App />
-      <DevTools />
-    </div>
-  </Provider>,
+	<Provider store={ store }>
+		<div>
+			<App />
+			<DevTools />
+		</div>
+	</Provider>,
   document.getElementById( 'root' )
 );

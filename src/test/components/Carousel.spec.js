@@ -9,7 +9,7 @@ describe( '<Carousel />', ()=>{
 	let props = { list:config.carousel };
 
 	beforeEach(()=>{
-		wrapper = mount( <Carousel {...props} /> );
+		wrapper = mount( <Carousel { ...props } /> );
 	});
 
 	it.skip( 'renders Carousel', ()=>{

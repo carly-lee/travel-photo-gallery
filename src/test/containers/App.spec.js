@@ -26,7 +26,7 @@ describe( '<App />', () => {
 	let props = { config:{ type:'', data:null }, photoData: { data:null }, popup: { type:'', data:null }, requestConfig, requestPhotoData, configInitialised, openPopup, closePopup };
 
 	const setup = ()=>{
-		wrapper = mount( <App {...props} /> );
+		wrapper = mount( <App { ...props } /> );
 	};
 
 	it( 'shows Loading when there is no data', () => {

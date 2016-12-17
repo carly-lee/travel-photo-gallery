@@ -11,7 +11,7 @@ describe( '<Popup />', ()=>{
 	const props = { data:{ 'src':'/images/LD/LD_0.jpg', 'thumbnail':'/images/LD/thumbnail/LD_0.jpg', 'location':' ' }, closePopup };
 
 	beforeEach(()=>{
-		wrapper = mount( <Popup {...props} /> );
+		wrapper = mount( <Popup { ...props } /> );
 	});
 
 	it( 'allows us to set props', ()=>{

@@ -15,13 +15,13 @@ export class Icon extends React.Component{
 		const { iconType, className } = this.props;
 
 		if( process.env.NODE_ENV==='test' ){
-			return <div className={iconType}></div>;
+			return <div className={ iconType }></div>;
 		}
 
 
 		if( iconType ){
 			const svg = octicons[iconType].toSVG({ 'class':styles.icon });
-			return <div className={className || ''} dangerouslySetInnerHTML={{ __html:svg }} />;
+			return <div className={ className || '' } dangerouslySetInnerHTML={{ __html:svg }} />;
 		}else{
 			return <div>Missing icon</div>;
 		}

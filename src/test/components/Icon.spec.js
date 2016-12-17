@@ -8,7 +8,7 @@ describe( '<Icon />', ()=>{
 	let props = { iconType: IconTypes.ARROW_LEFT };
 
 	const setup = ()=>{
-		wrapper = mount( <Icon {...props} /> );
+		wrapper = mount( <Icon { ...props } /> );
 	};
 
 	it( 'shows the left arrow icon', ()=>{

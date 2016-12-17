@@ -48,6 +48,15 @@
         "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 3 }],
         "space-in-parens":["error", "always", { "exceptions": ["{}", "[]", "()", "empty"] }],
         "space-before-function-paren":["error", "never"],
-        "space-before-blocks": ["error", "never"]
+        "space-before-blocks": ["error", "never"],
+        "react/no-did-mount-set-state": "error",
+        "react/no-did-update-set-state": "error",
+        "react/no-unescaped-entities": "warn",
+        "react/prefer-es6-class": ["error", "never"],
+        "react/sort-prop-types": ["error", { "requiredFirst":true }],
+        "react/jsx-curly-spacing":["error", "always", {"spacing":{"objectLiterals": "never"}}],
+        "react/jsx-indent": ["error", "tab"],
+        "react/jsx-no-bind": ["error", {"ignoreRefs":true}],
+        "react/jsx-no-target-blank": "error"
     }
 }
