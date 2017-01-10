@@ -6,11 +6,11 @@ import { HorizontalList } from 'components/horizontallist';
 import { Popup } from 'components/popup';
 import { Carousel } from 'components/carousel';
 import { OPEN_POPUP } from 'actions/PopupActions';
-import configData from '../../data/config.json';
-import ld from '../../data/london.json';
-import ny from '../../data/ny.json';
-import pr from '../../data/paris.json';
-import ro from '../../data/rome.json';
+import configData from '../../src/data/config.json';
+import ld from '../../src/data/london.json';
+import ny from '../../src/data/ny.json';
+import pr from '../../src/data/paris.json';
+import ro from '../../src/data/rome.json';
 
 describe( '<App />', () => {
 	let wrapper;

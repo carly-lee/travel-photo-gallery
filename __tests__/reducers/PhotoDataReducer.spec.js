@@ -1,8 +1,8 @@
 import { PHOTO_DATA_REQUEST, PHOTO_DATA_SUCCESS, PHOTO_DATA_FAILURE } from 'app/actions/PhotoDataActions';
 import { photoData } from 'reducers';
 
-import londonJson from '../../data/london.json';
-import nyJson from '../../data/ny.json';
+import londonJson from '../../src/data/london.json';
+import nyJson from '../../src/data/ny.json';
 
 describe( 'PhotoDataReducer', ()=>{
 

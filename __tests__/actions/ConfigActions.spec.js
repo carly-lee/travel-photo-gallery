@@ -1,13 +1,10 @@
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
+import mockStore from 'redux-mock-store';
 import nock from 'nock';
 
 import { requestConfig, CONFIG_REQUEST, CONFIG_SUCCESS, CONFIG_FAILURE } from 'app/actions/ConfigActions';
 import { SERVER, DATA_URL } from 'app/Constants';
 
-const middlewares = [thunk];
-const mockStore = configureMockStore( middlewares );
-import config from '../../data/config.json';
+import config from '../../src/data/config.json';
 
 describe( 'ConfigActions', () => {
 	afterEach(() => {
@@ -24,11 +21,11 @@ describe( 'ConfigActions', () => {
       { type: CONFIG_SUCCESS, payload: config },
 		];
 
-		const store = mockStore({ config:[]});
+		const store = mockStore({ config:[] });
 
 		return store.dispatch( requestConfig())
                 .then(() => { // return of async actions
-	expect( store.getActions()).toEqual( expectedActions );
-});
+									expect( store.getActions()).toEqual( expectedActions );
+								});
 	});
 });

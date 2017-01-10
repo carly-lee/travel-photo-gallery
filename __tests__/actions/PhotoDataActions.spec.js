@@ -1,13 +1,10 @@
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
+import mockStore from 'redux-mock-store';
 import nock from 'nock';
 
 import { requestPhotoData, PHOTO_DATA_REQUEST, PHOTO_DATA_SUCCESS, PHOTO_DATA_FAILURE } from 'app/actions/PhotoDataActions';
 import { SERVER, DATA_URL } from 'app/Constants';
 
-const middlewares = [thunk];
-const mockStore = configureMockStore( middlewares );
-import london from '../../data/london.json';
+import london from '../../src/data/london.json';
 
 describe( 'PhotoDataActions', () => {
 	afterEach(() => {

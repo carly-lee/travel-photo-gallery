@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import { Carousel, CarouselItem } from 'components/carousel';
-import config from '../../data/config.json';
+import config from '../../src/data/config.json';
 
 describe( '<Carousel />', ()=>{
 	let wrapper;

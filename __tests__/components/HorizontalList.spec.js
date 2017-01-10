@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import { HorizontalList, ListItem, PageButton, BUTTON_DIRECTION } from 'components/horizontallist';
-import londonJson from '../../data/london.json';
+import londonJson from '../../src/data/london.json';
 
 describe( '<HorizontalList />', ()=>{
 	let wrapper;

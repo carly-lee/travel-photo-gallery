@@ -1,7 +1,7 @@
 import { CONFIG_REQUEST, CONFIG_SUCCESS, CONFIG_FAILURE, CONFIG_INITIALISED } from 'app/actions/ConfigActions';
 import { config } from 'reducers';
 
-import configJson from '../../data/config.json';
+import configJson from '../../src/data/config.json';
 
 describe( 'ConfigReducer', ()=>{
 

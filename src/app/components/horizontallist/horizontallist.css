@@ -25,6 +25,9 @@
   margin-bottom: 30px;
   height: 120px;
   overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
 
   @media (min-width: tabletWidth) {
     height: 141px;

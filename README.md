@@ -1,7 +1,5 @@
 # Travel photo gallery
 Travel photo gallery example (react+redux+webpack+jest)
-I am working on this project right now.
-This repository could be updated anytime.
 
 ## Installation
 
@@ -28,7 +26,9 @@ $ npm test or yarn test
 ## To do
 
 * Add bullet or some sort of pagenator on the list and Carousel.
-* Add infinite scroll.
+* Infinite scroll.
+* Lazy loading.
+* Performance optimization.
 * Make it pretty.
 
 and so on...?
