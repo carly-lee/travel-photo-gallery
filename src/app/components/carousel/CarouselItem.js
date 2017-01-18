@@ -6,6 +6,10 @@ import styles from './carousel.css';
 
 export default class CarouselItem extends PureComponent{
 
+	static propTypes = {
+		data: React.PropTypes.object.isRequired,
+	}
+
 	_handleImageLoadError(){
 	}
 
@@ -26,6 +30,3 @@ export default class CarouselItem extends PureComponent{
 	}
 }
 
-CarouselItem.propTypes = {
-	data: React.PropTypes.object.isRequired,
-};

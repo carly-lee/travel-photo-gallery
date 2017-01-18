@@ -27,7 +27,7 @@ $ npm test or yarn test
 
 * Add bullet or some sort of pagenator on the list and Carousel.
 * Infinite scroll.
-* Lazy loading.
+* Lazy loading in horizontal.
 * Performance optimization.
 * Make it pretty.
 

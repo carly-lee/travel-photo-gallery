@@ -6,6 +6,14 @@ import styles from './listitem.css';
 
 export default class ListItem extends PureComponent{
 
+	static propTypes = {
+		index: React.PropTypes.number,
+		width: React.PropTypes.number,
+		posX: React.PropTypes.number,
+		onClick: React.PropTypes.func.isRequired,
+		data: React.PropTypes.object.isRequired,
+	}
+
 	_onClick = ()=>{
 		const { onClick, index } = this.props;
 		onClick( index );
@@ -32,11 +40,3 @@ export default class ListItem extends PureComponent{
 		);
 	}
 }
-
-ListItem.propTypes = {
-	index: React.PropTypes.number,
-	width: React.PropTypes.number,
-	posX: React.PropTypes.number,
-	onClick: React.PropTypes.func.isRequired,
-	data: React.PropTypes.object.isRequired,
-};

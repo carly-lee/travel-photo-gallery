@@ -4,6 +4,10 @@ import { CarouselItem } from 'components/carousel';
 import styles from './carousel.css';
 
 export default class Carousel extends PureComponent{
+	static propTypes = {
+		list: React.PropTypes.array.isRequired,
+	}
+
 	constructor( props ){
 		super( props );
 		this.state = {
@@ -32,7 +36,3 @@ export default class Carousel extends PureComponent{
 		);
 	}
 }
-
-Carousel.propTypes = {
-	list: React.PropTypes.array.isRequired,
-};

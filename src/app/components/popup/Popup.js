@@ -7,6 +7,11 @@ import styles from './popup.css';
 
 export default class Popup extends PureComponent{
 
+	static propTypes = {
+		closePopup: React.PropTypes.func.isRequired,
+		data: React.PropTypes.object.isRequired,
+	}
+
 	_getScrollY(){
 		const supportPageOffset = window.pageXOffset !== undefined;
 		const isCSS1Compat = (( document.compatMode || '' ) === 'CSS1Compat' );
@@ -37,8 +42,3 @@ export default class Popup extends PureComponent{
 		);
 	}
 }
-
-Popup.propTypes = {
-	closePopup: React.PropTypes.func.isRequired,
-	data: React.PropTypes.object.isRequired,
-};

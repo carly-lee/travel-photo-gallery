@@ -6,6 +6,14 @@ import { isDesktop, isTablet } from 'app/utils/Layout';
 import styles from './horizontallist.css';
 
 export default class HorizontalList extends PureComponent{
+	static propTypes = {
+		title: React.PropTypes.string.isRequired,
+		date: React.PropTypes.string,
+		photos: React.PropTypes.array.isRequired,
+		id: React.PropTypes.string.isRequired,
+		onPhotoClick: React.PropTypes.func.isRequired,
+	}
+
 	constructor( props ){
 		super( props );
 
@@ -95,10 +103,3 @@ export default class HorizontalList extends PureComponent{
 	}
 }
 
-HorizontalList.propTypes = {
-	title: React.PropTypes.string.isRequired,
-	date: React.PropTypes.string,
-	photos: React.PropTypes.array.isRequired,
-	id: React.PropTypes.string.isRequired,
-	onPhotoClick: React.PropTypes.func.isRequired,
-};

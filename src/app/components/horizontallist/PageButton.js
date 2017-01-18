@@ -7,6 +7,11 @@ export const BUTTON_DIRECTION = { PREV: 1, NEXT:-1 };
 
 export default class PageButton extends PureComponent{
 
+	static propTypes = {
+		onClick: React.PropTypes.func.isRequired,
+		direction: React.PropTypes.number,
+	}
+
 	_onClick = ()=>{
 		const { onClick, direction } = this.props;
 		onClick( direction );
@@ -30,8 +35,3 @@ export default class PageButton extends PureComponent{
 		}
 	}
 }
-
-PageButton.propTypes = {
-	onClick: React.PropTypes.func.isRequired,
-	direction: React.PropTypes.number,
-};
