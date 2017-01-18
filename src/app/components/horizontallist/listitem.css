@@ -1,15 +1,15 @@
 @import '../../styles/config.css';
 
 .listItem {
-  /*position: absolute;*/
+  position: absolute;
   z-index: 0;
-  /*display: inline-block;*/
+  display: inline-block;
   overflow: hidden;
   width: 160px;
   height: 120px;
 
   background-color: #999999;
-  /*transition: left .2s ease-out;*/
+  transition: left .2s ease-out;
 
   @media (min-width: tabletWidth) {
     width: 188px;
@@ -19,7 +19,7 @@
   @media (min-width: desktopWidth) {
     width: 200px;
     height: 150px;
-    /*transition: left .5s ease-out;*/
+    transition: left .5s ease-out;
   }
 }
 

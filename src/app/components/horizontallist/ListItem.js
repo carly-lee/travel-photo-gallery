@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Preload from 'react-preload';
 
 import { SERVER } from 'app/Constants';
 import styles from './listitem.css';
 
-export default class ListItem extends Component{
+export default class ListItem extends PureComponent{
 
 	_onClick = ()=>{
 		const { onClick, index } = this.props;
@@ -23,7 +23,7 @@ export default class ListItem extends Component{
 		const imagePath = SERVER + data.thumbnail;
 
 		return (
-			<div className={ styles.listItem } onClick={ this._onClick }>
+			<div className={ styles.listItem } style={{ left:posX }} onClick={ this._onClick }>
 				<Preload loadingIndicator={ loadingIndicator } images={ [imagePath] } autoResolveDelay={ 3000 } onError={ this._handleImageLoadError } onSuccess={ this._handleImageLoadSuccess } resolveOnError={ true } mountChildren={ true }>
 					<img src={ imagePath } className={ styles.thumbnail } alt={ data.location } />
 				</Preload>

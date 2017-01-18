@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import { ListItem, PageButton, BUTTON_DIRECTION } from 'components/horizontallist';
 import { PAGE_SIZE } from 'app/Constants';
 import { isDesktop, isTablet } from 'app/utils/Layout';
 import styles from './horizontallist.css';
 
-export default class HorizontalList extends Component{
+export default class HorizontalList extends PureComponent{
 	constructor( props ){
 		super( props );
 

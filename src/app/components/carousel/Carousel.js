@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import { CarouselItem } from 'components/carousel';
 import styles from './carousel.css';
 
-export default class Carousel extends Component{
+export default class Carousel extends PureComponent{
 	constructor( props ){
 		super( props );
 		this.state = {

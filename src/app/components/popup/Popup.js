@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Preload from 'react-preload';
 
 import { IconTypes, Icon } from 'components/icon';
 import { SERVER } from 'app/Constants';
 import styles from './popup.css';
 
-export default class Popup extends Component{
+export default class Popup extends PureComponent{
 
 	_getScrollY(){
 		const supportPageOffset = window.pageXOffset !== undefined;
