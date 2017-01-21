@@ -1,4 +1,4 @@
-# Travel photo gallery
+# Travel photo gallery ![](https://david-dm.org/carly-lee/travel-photo-gallery.svg)
 Travel photo gallery example (react+redux+webpack+jest)
 
 ## Installation
