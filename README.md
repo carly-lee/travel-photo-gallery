@@ -1,4 +1,7 @@
 # Travel photo gallery ![](https://david-dm.org/carly-lee/travel-photo-gallery.svg)
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/85a951235f8d4618b45bda3b2d1b594e)](https://www.codacy.com/app/carly-lee/travel-photo-gallery?utm_source=github.com&utm_medium=referral&utm_content=carly-lee/travel-photo-gallery&utm_campaign=badger)
+
 Travel photo gallery example (react+redux+webpack+jest)
 
 ## Installation
