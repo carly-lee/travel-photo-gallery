@@ -1,4 +1,6 @@
-# Travel photo gallery ![](https://david-dm.org/carly-lee/travel-photo-gallery.svg)
+# Travel photo gallery    
+[![Build Status](https://travis-ci.org/carly-lee/travel-photo-gallery.svg?branch=master)](https://travis-ci.org/carly-lee/travel-photo-gallery)
+[![Dependency Status](https://gemnasium.com/badges/github.com/carly-lee/travel-photo-gallery.svg)](https://gemnasium.com/github.com/carly-lee/travel-photo-gallery) [![Known Vulnerabilities](https://snyk.io/test/github/carly-lee/travel-photo-gallery/badge.svg)](https://snyk.io/test/github/carly-lee/travel-photo-gallery)    
 Travel photo gallery example (react+redux+webpack+jest)
 
 ## Installation
