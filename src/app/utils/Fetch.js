@@ -11,10 +11,6 @@ export function getResponse( response ){
 	return promise;
 }
 
-const defaultOptions = {
-	
-}
-
 export const request = options => url => {
 	return fetch( url, options )
 		.then( getResponse );

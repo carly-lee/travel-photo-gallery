@@ -15,6 +15,7 @@ describe( 'PhotoDataActions', () => {
 		nock( SERVER )
       .get( DATA_URL.CONFIG )
       .reply( 200, london );
+		console.log( 'url: ', SERVER + DATA_URL.CONFIG );
 
 		const expectedActions = [
       { type: PHOTO_DATA_REQUEST },
