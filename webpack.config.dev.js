@@ -1,68 +1,86 @@
-process.env.NODE_ENV = 'development';
+const path = require( 'path' );
+const webpack = require( 'webpack' );
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var path = require( 'path' );
-var webpack = require( 'webpack' );
-var atImport = require( 'postcss-import' );
-var cssnext = require( 'postcss-cssnext' );
-var ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
-
-var publicPath = '/';
-
-module.exports = {
-	entry:[
-		'webpack-dev-server/client?http://localhost:3000',
-		'webpack/hot/dev-server',
-		'./src/app/index.dev.js',
-	],
+const config = {
+	entry: './src/app/index.dev.js',
 	output:{
-		path: path.join( __dirname, '/build/' ),
-		pathinfo: true,
-		publicPath: publicPath,
-		filename: 'bundle.js',
+		path: path.resolve( __dirname, 'build' ),
+		filename: 'bundle.js'
 	},
 	resolve: {
-		extensions: [ '', '.js', '.json', '.css' ],
-		root: path.resolve( __dirname ),
+		extensions: [".js", ".json", ".css"],
 		alias: {
-			'react/lib/ReactMount': 'react-dom/lib/ReactMount', //for react-hot-loader
-			app: path.join( __dirname,'src/app' ),
-			store: path.join( __dirname,'src/app/store/dev' ),
-			actions: path.join( __dirname,'src/app/actions' ),
-			reducers: path.join( __dirname,'src/app/reducers' ),
-			containers: path.join( __dirname,'src/app/containers' ),
-			components: path.join( __dirname,'src/app/components' ),
-			utils: path.join( __dirname,'src/app/utils' ),
+			app: path.resolve( __dirname, 'src/app/' ),
+			store: path.resolve( __dirname, 'src/app/store/dev/' ),
+			actions: path.resolve( __dirname, 'src/app/actions/' ),
+			reducers: path.resolve( __dirname, 'src/app/reducers/' ),
+			containers: path.resolve( __dirname, 'src/app/containers/' ),
+			components: path.resolve( __dirname, 'src/app/components/' ),
+			utils: path.resolve( __dirname, 'src/app/utils/' )
 		},
 	},
 	plugins:[
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify( 'development' ),
 		}),
-		new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NoErrorsPlugin(),
-		new ExtractTextPlugin( 'main.css', { allChunks: true }),
+		new webpack.NoEmitOnErrorsPlugin(),
+		new HtmlWebpackPlugin({
+      title: 'My travel photo gallery',
+			hash: true,
+      template: './src/index.html'
+    }),
+		 new ExtractTextPlugin({
+	   filename: "main.css",
+	   disable: false,
+	   allChunks: true
+		})
 	],
 	module:{
-		preLoaders: [
-      { test: /\.js$/,loader: 'eslint',include: path.resolve( __dirname, 'src' ) },
-		],
-		loaders:[
-      { test: /\.js$/, loaders: [ 'react-hot','babel' ], include: path.resolve( __dirname, 'src' ) },
-      { test: /\.css$/, loader: 'style!css?modules&importLoaders=1&localIdentName=[name]_[local]_[hash:base64:5]!postcss', include: path.resolve( __dirname, 'src' ) },
-      { test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,loader: 'file?name=[name].[ext]' },
-      { test: /\.json$/,loader: 'json' },
-      { test: /\.svg$/,loaders: [ 'react-svgdom', 'svgo' ]},
+		rules:[
+      { test: /\.js$/,
+				use: [ 'react-hot-loader', 'babel-loader' ],
+				include: path.resolve( __dirname, 'src' ) },
+			{ test: /\.css$/,
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+							importLoaders: 1,
+              modules: true,
+							localIdentName: '[path][name]__[local]--[hash:base64:5]' 
+						}
+          },
+					{ loader: 'postcss-loader',
+						options: {
+								plugins: function () {
+									return [
+										require('postcss-import'),
+										require('postcss-cssnext')
+									];
+								}
+							}
+				 }]
+			},
+      { test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+				use: 'file-loader?name=[name].[ext]' },
+      { test: /\.svg$/,
+				use: [ 'react-svgdom-loader', 'svgo-loader' ]}
 	  ],
 	},
-	postcss: [
-		atImport({ path: [ '.', './src', 'node_modules' ]}),
-		cssnext(),
-	],
-	node: {
-		__dirname: true,
-		fs: 'empty',
-		net: 'empty',
-		tls: 'empty',
-	},
+	devServer: {
+		contentBase: path.join(__dirname, "src"),
+		compress: true,
+		historyApiFallback: true,
+		open: true,
+		hot: true,
+		stats: "errors-only",
+		watchContentBase: true,
+		port: 3000
+	}
 };
+
+module.exports = config;

@@ -1,3 +1,5 @@
+import fetch from 'isomorphic-fetch';
+
 export function getResponse( response ){
 	const promise = new Promise(( resolve, reject ) => {
 		if( response.status >= 200 && response.status < 400 ){
@@ -8,3 +10,12 @@ export function getResponse( response ){
 	});
 	return promise;
 }
+
+const defaultOptions = {
+	
+}
+
+export const request = options => url => {
+	return fetch( url, options )
+		.then( getResponse );
+};
