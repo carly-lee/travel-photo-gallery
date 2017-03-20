@@ -2,14 +2,21 @@ const path = require( 'path' );
 const webpack = require( 'webpack' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 
+const VENDOR_LIBS = [
+  'react', 'redux', 'react-redux', 'react-dom', 'redux-thunk',
+	'isomorphic-fetch', 'octicons', 'normalize.css', 'react-preload'
+];
+
 const config = {
-	entry: './src/app/index.prod.js',
+	entry: {
+		bundel: './src/app/index.prod.js',
+		vendor: VENDOR_LIBS
+	},
 	output:{
 		path: path.resolve( __dirname, 'build' ),
-		filename: 'bundle.js'
+		filename: '[name].[chunkhash].js'
 	},
 	resolve: {
 		extensions: [ '.js', '.json', '.css' ],
@@ -23,41 +30,6 @@ const config = {
 			utils: path.resolve( __dirname,'src/app/utils' ),
 		},
 	},
-	plugins:[
-		new webpack.DefinePlugin({
-			'process.env': {
-				'NODE_ENV': JSON.stringify( 'production' ),
-	    },
-	  }),
-		new webpack.optimize.OccurrenceOrderPlugin(),
-		new webpack.optimize.UglifyJsPlugin({
-			compress: {
-				screw_ie8: true, // React doesn't support IE8
-				warnings: false,
-	    },
-			mangle: {
-				screw_ie8: true,
-	    },
-			output: {
-				comments: false,
-				screw_ie8: true,
-			},
-		}),
-		new HtmlWebpackPlugin({
-      title: 'My travel photo gallery',
-			hash: true,
-      template: './src/index.html'
-    }),
-		 new ExtractTextPlugin({
-	   filename: "main.css",
-	   disable: false,
-	   allChunks: true
-		}),
-		new CleanWebpackPlugin(['build']),
-		new CopyWebpackPlugin([{ from: 'src/index.html', to: 'index.html' }]),
-		new CopyWebpackPlugin([{ from: 'src/images/', to: 'images/' }]),
-		new CopyWebpackPlugin([{ from: 'src/data/', to: 'data/' }]),
-	],
 	module:{
 		rules:[
       { test: /\.js$/,
@@ -92,7 +64,42 @@ const config = {
       { test: /\.svg$/,
 				use: [ 'react-svgdom-loader', 'svgo-loader' ]}
 	  ],
-	}
+	},
+	plugins: [
+		new webpack.DefinePlugin({
+			'process.env': {
+				'NODE_ENV': JSON.stringify( 'production' ),
+	    },
+	  }),
+		new webpack.optimize.OccurrenceOrderPlugin(),
+		new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor', 'manifest']
+    }),
+		new webpack.optimize.UglifyJsPlugin({
+			compress: {
+				screw_ie8: true, // React doesn't support IE8
+				warnings: false,
+	    },
+			mangle: {
+				screw_ie8: true,
+	    },
+			output: {
+				comments: false,
+				screw_ie8: true,
+			},
+		}),
+		new HtmlWebpackPlugin({
+      title: 'My travel photo gallery',
+      template: './src/index.html'
+    }),
+		 new ExtractTextPlugin({
+	   filename: "main.css",
+	   disable: false,
+	   allChunks: true
+		}),
+		new CopyWebpackPlugin([{ from: 'src/images/', to: 'images/' }]),
+		new CopyWebpackPlugin([{ from: 'src/data/', to: 'data/' }]),
+	]
 };
 
 module.exports = config;

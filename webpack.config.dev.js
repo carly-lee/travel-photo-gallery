@@ -21,23 +21,6 @@ const config = {
 			utils: path.resolve( __dirname, 'src/app/utils/' )
 		},
 	},
-	plugins:[
-		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': JSON.stringify( 'development' ),
-		}),
-		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NoEmitOnErrorsPlugin(),
-		new HtmlWebpackPlugin({
-      title: 'My travel photo gallery',
-			hash: true,
-      template: './src/index.html'
-    }),
-		 new ExtractTextPlugin({
-	   filename: "main.css",
-	   disable: false,
-	   allChunks: true
-		})
-	],
 	module:{
 		rules:[
       { test: /\.js$/,
@@ -71,6 +54,23 @@ const config = {
 				use: [ 'react-svgdom-loader', 'svgo-loader' ]}
 	  ],
 	},
+	plugins: [
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': JSON.stringify( 'development' ),
+		}),
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NoEmitOnErrorsPlugin(),
+		new HtmlWebpackPlugin({
+      title: 'My travel photo gallery - development',
+			hash: true,
+      template: './src/index.html'
+    }),
+		 new ExtractTextPlugin({
+	   filename: "main.css",
+	   disable: false,
+	   allChunks: true
+		})
+	],
 	devServer: {
 		contentBase: path.join(__dirname, "src"),
 		compress: true,
