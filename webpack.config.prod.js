@@ -11,7 +11,7 @@ const VENDOR_LIBS = [
 
 const config = {
 	entry: {
-		bundel: './src/app/index.prod.js',
+		bundle: './src/app/index.prod.js',
 		vendor: VENDOR_LIBS
 	},
 	output:{
@@ -33,7 +33,7 @@ const config = {
 	module:{
 		rules:[
       { test: /\.js$/,
-				use: [ 'react-hot-loader', 'babel-loader' ],
+				use: 'babel-loader',
 				include: path.resolve( __dirname, 'src' ) },
 			{ test: /\.css$/,
 				use: ExtractTextPlugin.extract({

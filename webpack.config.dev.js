@@ -4,7 +4,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
-	entry: './src/app/index.dev.js',
+	entry: [ 
+		'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
+		'react-hot-loader/patch', 
+		'./src/app/index.dev.js' 
+	],
 	output:{
 		path: path.resolve( __dirname, 'build' ),
 		filename: 'bundle.js'
@@ -24,7 +29,7 @@ const config = {
 	module:{
 		rules:[
       { test: /\.js$/,
-				use: [ 'react-hot-loader', 'babel-loader' ],
+				use: [ 'react-hot-loader/webpack', 'babel-loader' ],
 				include: path.resolve( __dirname, 'src' ) },
 			{ test: /\.css$/,
         use: [
@@ -72,7 +77,7 @@ const config = {
 		})
 	],
 	devServer: {
-		contentBase: path.join(__dirname, "src"),
+		contentBase: path.resolve(__dirname, "src"),
 		compress: true,
 		historyApiFallback: true,
 		open: true,

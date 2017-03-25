@@ -16,13 +16,5 @@ export default function configureStore(){
     DevTools.instrument()
   );
 
-	const store = createStore( combinedReducers, enhancer );
-
-	if ( module.hot )
-		{module.hot.accept( 'reducers', () =>
-      store.replaceReducer( require( 'reducers' )/*.default if you use Babel 6+ */ )
-    );}
-
-
-	return store;
+	return createStore( combinedReducers, enhancer );
 }
