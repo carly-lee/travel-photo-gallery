@@ -90,10 +90,22 @@ const config = {
 		}),
 		new HtmlWebpackPlugin({
       title: 'My travel photo gallery',
-      template: './src/index.html'
+      template: './src/index.html',
+			minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeRedundantAttributes: true,
+                useShortDoctype: true,
+                removeEmptyAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                keepClosingSlash: true,
+                minifyJS: true,
+                minifyCSS: true,
+                minifyURLs: true
+            }
     }),
 		 new ExtractTextPlugin({
-	   filename: "main.css",
+	   filename: '[name].[chunkhash].css',
 	   disable: false,
 	   allChunks: true
 		}),

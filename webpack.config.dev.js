@@ -5,9 +5,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
 	entry: [ 
+		'react-hot-loader/patch',
 		'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
-		'react-hot-loader/patch', 
 		'./src/app/index.dev.js' 
 	],
 	output:{
